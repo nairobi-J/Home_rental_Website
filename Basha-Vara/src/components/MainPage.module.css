@@ -1,0 +1,19 @@
+.mainPage{
+  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   gap:20px;
+    
+  }
+  .mainPage div{
+    display: flex;
+    gap:10px;
+  
+  }
+.loginInput{
+    display: flex;
+    flex-direction: column;
+   gap:1opx;
+  }
+  
