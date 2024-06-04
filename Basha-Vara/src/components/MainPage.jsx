@@ -3,8 +3,8 @@ import styles from './MainPage.module.css'
 const MainPage = () => {
   return (
     
-       <div className= {styles.mainPage}>
-     <div className='title'> <h1>Home Rental Help</h1></div> 
+       <div className= {`${styles.mainPage} container`}>
+     <div className='title' > <h1>Home Rental Help</h1></div> 
      <div className={styles.loginInput}>
      <div className="nameInput">
       <p>Name:  <input type="name"></input></p>
