@@ -4,3 +4,13 @@
   
 
 }
+button{
+  background-color: transparent;
+  background-color: rgb(50, 8, 8);
+  color: aliceblue;
+ 
+
+ }
+ input{
+  box-shadow: 1.5px 2px #500707;
+ }
