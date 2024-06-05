@@ -4,7 +4,10 @@ const MainPage = () => {
   return (
     
        <div className= {`${styles.mainPage} container`}>
-     <div className='title' > <h1>Home Rental Help</h1></div> 
+        <div className={styles.mainImage}><img src = "images/Home-Rental-Logo.jpg"/></div>
+     <div className='title' > <h1>HOME RENTAL HELP</h1></div> 
+     <button>Sign Up?</button>
+     <p>Or</p>
      <div className={styles.loginInput}>
      <div className="nameInput">
       <p>Name:  <input type="name"></input></p>
@@ -14,15 +17,18 @@ const MainPage = () => {
       <p>Password: <input type='password'></input></p>
       
      </div>
+     
      </div>
-      <button>Log in</button>
-      <div className="help">
-      <img  width= {25} height={48} src = "circle-info-solid.svg"/>
-      <p>Help</p>
+     <button>Log in</button>
+      <div className={styles.help}>
+        <button  > <img src = "circle-info-solid.svg"/>
+      </button>
+      <p>HELP</p>
+     
       </div>
-      <div className="Aboutus">
-      <img  width= {25} height={48} src = "about.svg"/>
-      <p>About Us</p>
+      <div className={styles.abtus}>
+     <button><img   src = "about.svg"/></button> 
+      <p>ABOUT US</p>
       </div>
     
      
