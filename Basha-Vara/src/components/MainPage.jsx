@@ -21,13 +21,13 @@ const MainPage = () => {
      </div>
      <button>Log in</button>
       <div className={styles.help}>
-        <button  > <img src = "circle-info-solid.svg"/>
+        <button  > <img src = "images/circle-info-solid.svg"/>
       </button>
       <p>HELP</p>
      
       </div>
       <div className={styles.abtus}>
-     <button><img   src = "about.svg"/></button> 
+     <button><img   src = "images/about.svg"/></button> 
       <p>ABOUT US</p>
       </div>
     
