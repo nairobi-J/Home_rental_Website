@@ -1,24 +1,33 @@
 import React from 'react';
 import styles from './MainPage.module.css'
+import {motion} from "framer-motion";
 const MainPage = () => {
   return (
     
        <div className= {`${styles.mainPage} container`}>
         <div className={styles.mainImage}><img src = "images/Home-Rental-Logo.jpg"/></div>
      <div className='title' > <h1>HOME RENTAL HELP</h1></div> 
+     <div className={styles.qoute}>
+      const text = "Framer Motion is a really cool tool".split(" ");
+    {/* {text.map((el, i) => (
+        <motion.span
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{
+            duration: 0.25,
+            delay: i / 10
+          }}
+          key={i}
+        >
+          {el}{" "}
+        </motion.span>
+      ))} */}
+      <p>A Complete solution for Home renting. Where you can find your dream home without even roaming around road. Take a deep breath and dive into the latest helping hand of yours</p>
+      <p>Happy Renting Dude! We are always there for you. </p>
+     </div>
      <button>Sign Up?</button>
      <p>Or</p>
-     <div className={styles.loginInput}>
-     <div className="nameInput">
-      <p>Name:  <input type="name"></input></p>
      
-     </div>
-     <div className="passwordInput">
-      <p>Password: <input type='password'></input></p>
-      
-     </div>
-     
-     </div>
      <button>Log in</button>
       <div className={styles.help}>
         <button  > <img src = "images/circle-info-solid.svg"/>
