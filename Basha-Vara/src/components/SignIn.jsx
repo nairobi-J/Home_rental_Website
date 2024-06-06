@@ -4,7 +4,7 @@ import styles from './SignIn.module.css';
 const SignIn = () => {
   return (
     <div className={`${styles.signIn} container`}>
-        <h1>Login To Your Account!</h1>
+        <h2>Login To Your Account!</h2>
         <div className='loginInfo'>
             <p>Name: <input type='Name'></input></p>
             <p>Email: <input type='Email'></input></p>
