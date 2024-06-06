@@ -17,10 +17,10 @@ const MainPage = () => {
       <p>     </p>
     </div>
    
-     <button className='signIn'>Sign In</button>
-     {/* <p>Or</p> */}
-     
-    <a href=''>Don't Have Any Account?</a>
+     <button >Sign In</button>
+     <p>Or</p>
+     <button >Sign Up</button>
+    {/* <a href=''>Don't Have Any Account?</a> */}
       <div className={styles.help}>
         <button  > <img src = "images/circle-info-solid.svg"/>
       </button>

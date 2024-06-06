@@ -8,7 +8,7 @@ const SignUp = () => {
       <p>Name:  <input type="name"></input></p>
       <p>Email:  <input type="mail"></input></p>
       <p>Password:  <input type="password"></input></p>
-      <p>Phone-No:  <input type="number"></input></p>
+      <p>Phone-No:  <input type=""></input></p>
       <p>Address:  <input type="address"></input></p>
       
       </div>
