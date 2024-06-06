@@ -1,5 +1,5 @@
 .mainPage{
-   padding-top: 7px;
+   padding-top: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -18,7 +18,7 @@
   flex-direction: column;
   align-items: center;
   font-family: 'Playfair Display' ;
-  font-weight: 400;
+  font-weight: 550;
 }
  
   img{
