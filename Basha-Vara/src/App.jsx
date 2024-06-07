@@ -6,6 +6,7 @@ import MainPage from './components/MainPage'
 import SignUp from './components/SignUp'
 import SignIn from './components/SignIn'
 import HomePage from './components/HomePage'
+import PasswordReset from './components/PasswordReset'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -16,6 +17,7 @@ function App() {
        <SignUp/>
        <SignIn/>
        <HomePage/>
+       <PasswordReset/>
        
     </div>
   

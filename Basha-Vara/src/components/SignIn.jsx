@@ -16,7 +16,7 @@ const SignIn = () => {
         </div>
 
         <div>
-           <a href=''>Forget Password?</a>
+           <a href=''>Forgot Password?</a>
         </div>
     </div>
   )
