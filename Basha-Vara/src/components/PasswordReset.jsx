@@ -3,7 +3,7 @@ import styles from './PasswordReset.module.css'
 
 const PasswordReset = () => {
   return (
-    <div className={`${styles.signIn} container`}>
+    <div className={`${styles.passwordReset} container`}>
         <h2>Reset Your Password</h2>
         <div className='passInfo'>
             <p>Email: <input type='Email'></input></p>
