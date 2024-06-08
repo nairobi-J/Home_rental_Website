@@ -1,7 +1,10 @@
 import React from 'react';
 import styles from './HomePage.module.css'
+import Header from './Header';
 const HomePage = () => {
   return (
+    <>
+    <Header/>
     <div className={`${styles.homePage} container`}>
         
      <nav className={styles.homeNav}>
@@ -17,6 +20,9 @@ const HomePage = () => {
      </nav>
 
     </div>
+
+    </>
+    
   );
 }
 
