@@ -1,8 +1,11 @@
 import React from 'react'
 import styles from './PasswordReset.module.css'
+import Header from './Header'
 
 const PasswordReset = () => {
   return (
+    <>
+    <Header />
     <div className={`${styles.passwordReset} container`}>
         <h2>Reset Your Password</h2>
         <div className='passInfo'>
@@ -15,6 +18,8 @@ const PasswordReset = () => {
             <button className='passReset'>Save</button>
         </div>
     </div>
+    </>
+   
   )
 }
 
