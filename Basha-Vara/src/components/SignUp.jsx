@@ -1,7 +1,18 @@
 import React from 'react';
 import styles from './SignUp.module.css'
+import Header from './Header';
+import { useNavigate } from 'react-router-dom';
 const SignUp = () => {
+
+  const navigate = useNavigate(); // Initialize the navigate function
+
+  // Function to handle navigation
+  const handleNavigation = (route) => {
+    navigate(route);
+  };
   return (
+    <>
+    <Header/>
     <div className={`${styles.signUp} container`}>
       <h2>Create A New Account!</h2>
       <div className="info">
@@ -12,8 +23,11 @@ const SignUp = () => {
       <p>Address:  <input type="address"></input></p>
       
       </div>
-      <button>Sign Up</button>
+      <button onClick= {() => handleNavigation('/mainPage')}>Sign Up</button>
     </div>
+
+    </>
+   
   );
 }
 
