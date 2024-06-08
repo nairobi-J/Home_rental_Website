@@ -1,7 +1,9 @@
 import React, {useState, useRef} from 'react';
 import styles from './AccountSetting.module.css';
+import Header from './Header';
 
 const AccountSetting = () => {
+
     const [image, setImage] = useState(null);
     const hiddenFileInput = useRef(null);
   
@@ -71,7 +73,9 @@ const AccountSetting = () => {
     };
   
     return ( 
-        <div className={`${styles.accountSetting} container`}> 
+      <>
+      <Header/>
+      <div className={`${styles.accountSetting} container`}> 
         <h2>Update Your Profile</h2>
       <div className="image-upload-container">
         <div className="box-decoration">
@@ -114,6 +118,9 @@ const AccountSetting = () => {
         <button className='saveBtn'>Save</button>
       </div>
       </div>
+
+      </>
+      
     );
   }
   

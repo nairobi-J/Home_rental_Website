@@ -1,41 +1,33 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import MainPage from './components/MainPage'
-import SignUp from './components/SignUp'
-import SignIn from './components/SignIn'
-import HomePage from './components/HomePage'
-import PasswordReset from './components/PasswordReset'
-import AccountSetting from './components/AccountSetting'
-
-
-//import react-router-dom
-import {
-  BrowserRouter as router,
-  Switch,
-  Route,
-  Link
-} from 'react-router-dom';
+import { useState } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import './App.css';
+import MainPage from './components/MainPage';
+import SignUp from './components/SignUp';
+import SignIn from './components/SignIn';
+import HomePage from './components/HomePage';
+import PasswordReset from './components/PasswordReset';
+import AccountSetting from './components/AccountSetting';
+import ForgotPassword from './components/ForgotPassword';
+import GetOtp from './components/GetOtp';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <div>
-        <MainPage/>
-       <SignUp/>
-       <SignIn/>
-       <HomePage/>
-       <PasswordReset/>
-       <AccountSetting/>
-
-       
+      <BrowserRouter>
+        <Routes>
+          <Route index element={<MainPage />} />
+          <Route path='/mainPage' element={<MainPage />} />
+          <Route path='/signUp' element={<SignUp />} />
+          <Route path='/signIn' element={<SignIn />} />
+          <Route path='/homePage' element={<HomePage />} />
+          <Route path='/accountsetting' element={<AccountSetting />} />
+          <Route path='/passwordReset' element={<PasswordReset />} />
+          <Route path='/forgotPassword' element={<ForgotPassword />} />
+          <Route path='/getOtp' element={<GetOtp />} />
+        </Routes>
+      </BrowserRouter>
     </div>
-  
-
-
-  )
+  );
 }
 
-export default App
+export default App;
