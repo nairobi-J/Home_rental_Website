@@ -9,17 +9,27 @@ import HomePage from './components/HomePage'
 import PasswordReset from './components/PasswordReset'
 import AccountSetting from './components/AccountSetting'
 
+
+//import react-router-dom
+import {
+  BrowserRouter as router,
+  Switch,
+  Route,
+  Link
+} from 'react-router-dom';
+
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <div>
-       <MainPage/>
+        <MainPage/>
        <SignUp/>
        <SignIn/>
        <HomePage/>
        <PasswordReset/>
        <AccountSetting/>
+
        
     </div>
   

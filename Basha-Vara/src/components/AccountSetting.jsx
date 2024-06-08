@@ -73,10 +73,10 @@ const AccountSetting = () => {
     return ( 
         <div className={`${styles.accountSetting} container`}> 
         <h2>Update Your Profile</h2>
-      <div className="">
+      <div className="image-upload-container">
         <div className="box-decoration">
           <label htmlFor="image-upload-input" className="image-upload-label">
-            {image ? image.name : "Choose an image"}
+            {image ? image.name : "Select Profile Picture"}
           </label>
           <div onClick={handleClick} style={{ cursor: "pointer" }}>
             {image ? (
@@ -101,6 +101,17 @@ const AccountSetting = () => {
             Upload
           </button>
         </div>
+      </div>
+      <div className='otherInfo'>
+      <p>Username: <input type='username'></input></p>
+      <p>First Name: <input type='username'></input></p>
+      <p>Last Name: <input type='username'></input></p>
+      <p>Contact No. : <input type='contact'></input></p>
+      <p>Address: <input type='address'></input></p>
+
+      </div>
+      <div>
+        <button className='saveBtn'>Save</button>
       </div>
       </div>
     );
