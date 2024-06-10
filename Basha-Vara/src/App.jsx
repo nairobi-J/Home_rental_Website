@@ -11,6 +11,8 @@ import ForgotPassword from './components/ForgotPassword';
 import GetOtp from './components/GetOtp';
 import Navbar from './components/Navbar';
 import AboutUs from './components/AboutUs'
+import Host from './components/Host'
+import WishList from './components/WishList';
 function App() {
   return (
     <div>
@@ -26,6 +28,9 @@ function App() {
           <Route path='/forgotPassword' element={<ForgotPassword />} />
           <Route path='/getOtp' element={<GetOtp />} />
           <Route path='/about' element={<AboutUs />} />
+          <Route path='/host' element = {<Host/>} />
+          <Route path='/wish' element = {<WishList/>}/>
+
         </Routes>
       </BrowserRouter>
     </div>

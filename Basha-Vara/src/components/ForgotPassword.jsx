@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import Header from './Header';
 import Styles from './ForgotPassword.module.css'
-
+import Navbar from './Navbar';
 const ForgotPassword = () => {
   const navigate = useNavigate(); // Initialize the navigate function
 
@@ -13,7 +13,8 @@ const ForgotPassword = () => {
   return (
     <div>
     <Header/>
-    
+    <Navbar/>
+  
     <div className={`${Styles.forgotPassword} container`}>
     <img src="images/Logo.jpg" alt="Home Rental Logo" />
       <h1>Forgot Password?</h1>

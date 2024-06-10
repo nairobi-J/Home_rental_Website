@@ -1,10 +1,16 @@
 import React from 'react';
 import styles from './AboutUs.module.css';
+import Navbar from './Navbar';
+
 
 const AboutUs = () => {
     return (
+   
         <div className={styles.wrapper}>
+          
+           
             <div className={styles.container}>
+          
                 <header className={styles.header}>
                     <h1>Welcome to DREAM  HOME BD</h1>
                     <p>Your Trusted Partner in Home Rentals</p>

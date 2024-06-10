@@ -19,7 +19,7 @@ li{
 nav {
     justify-content: space-around;
     align-items:center;
-    height: 17vh;
+    height: 10vh;
 
 }
 
@@ -30,3 +30,13 @@ input{
  height: 45px;
  width: 200px;
 }
+.logo{
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+   }
+   img{
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+   }
