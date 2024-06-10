@@ -23,7 +23,7 @@ const AccountSetting = () => {
   };
 
   return (
-    <div className={`${styles.signIn} container`}>
+    <div className={`${styles.accountSetting} container`}>
       <Navbar/>
     <div className="profile-container">
       <h2>Profile Settings</h2>
