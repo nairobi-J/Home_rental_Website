@@ -8,9 +8,9 @@
 body, html {
     height: 100%;
     margin: 0;
-    background-color: var(--peach-bg);
+    background-color: lightblue;
     font-family: 'Helvetica Neue', Arial, sans-serif;
-    color: var(--coffee-text);
+    color: black;
 }
 
 .wrapper {
@@ -21,7 +21,7 @@ body, html {
 }
 
 .container {
-    background: white; 
+    background: lightskyblue;
     padding: 30px;
     border-radius: 15px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
@@ -37,12 +37,12 @@ body, html {
 .header h1 {
     font-size: 2.8em;
     margin-bottom: 10px;
-    color: var(--coffee-text);
+    color: var( --coffee-text);
 }
 
 .header p {
     font-size: 1.2em;
-    color: var(--accent-color);
+    color: black;
 }
 
 section {
@@ -52,7 +52,7 @@ section {
 h2 {
     font-size: 2em;
     color: var(--coffee-text);
-    border-bottom: 2px solid var(--accent-color);
+    border-bottom: 2px;
     padding-bottom: 10px;
     margin-bottom: 20px;
 }
@@ -97,18 +97,9 @@ ul li {
     margin-top: 10px;
 }
 
-blockquote {
-    font-style: italic;
-    border-left: 6px solid var(--accent-color);
-    padding-left: 15px;
-    margin-left: 0;
-    background-color: var(--light-accent);
-    padding: 10px;
-    border-radius: 5px;
-}
 
 .contact {
-    background-color: var(--light-accent);
+    background-color: lightblue;
     padding: 20px;
     border-radius: 10px;
     border: 1px solid var(--accent-color);
@@ -126,7 +117,7 @@ blockquote {
 }
 
 .footer a {
-    color: var(--accent-color);
+    color: var(--coffee-text);
     text-decoration: none;
     font-weight: bold;
 }
