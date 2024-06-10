@@ -14,6 +14,7 @@ const SignUp = () => {
     <>
     <Header/>
     <div className={`${styles.signUp} container`}>
+    <img src="images/Logo.jpg" alt="Home Rental Logo" />
       <h2>Create A New Account!</h2>
       <div className="info">
       <p>Name:  <input type="name"></input></p>

@@ -7,6 +7,7 @@ const PasswordReset = () => {
     <>
     <Header />
     <div className={`${styles.passwordReset} container`}>
+    <img src="images/Logo.jpg" alt="Home Rental Logo" />
         <h2>Reset Your Password</h2>
         <div className='passInfo'>
             <p>Email: <input type='Email'></input></p>

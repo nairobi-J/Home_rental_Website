@@ -1,24 +1,14 @@
 import React from 'react';
 import styles from './HomePage.module.css'
 import Header from './Header';
+import Navbar from './Navbar';
 const HomePage = () => {
   return (
     <>
     <Header/>
     <div className={`${styles.homePage} container`}>
-        
-     <nav className={styles.homeNav}>
-     <input value= 'search here'>
-     </input>
-     <img src = "images/search.svg"/>
-        <ul>
-            <li>Home</li>
-            <li>Profile</li>
-            
-
-        </ul>
-     </nav>
-
+    <Navbar/>
+     
     </div>
 
     </>

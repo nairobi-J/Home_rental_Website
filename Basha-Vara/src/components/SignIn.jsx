@@ -15,6 +15,7 @@ const SignIn = () => {
     <>
       <Header />
       <div className={`${styles.signIn} container`}>
+      <img src="images/Logo.jpg" alt="Home Rental Logo" />
         <h2>Login To Your Account!</h2>
         <div className='loginInfo'>
           <p>Name: <input type='Name' /></p>
