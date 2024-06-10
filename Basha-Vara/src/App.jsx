@@ -10,6 +10,7 @@ import AccountSetting from './components/AccountSetting';
 import ForgotPassword from './components/ForgotPassword';
 import GetOtp from './components/GetOtp';
 import Navbar from './components/Navbar';
+import AboutUs from './components/AboutUs'
 function App() {
   return (
     <div>
@@ -24,6 +25,7 @@ function App() {
           <Route path='/passwordReset' element={<PasswordReset />} />
           <Route path='/forgotPassword' element={<ForgotPassword />} />
           <Route path='/getOtp' element={<GetOtp />} />
+          <Route path='/about' element={<AboutUs />} />
         </Routes>
       </BrowserRouter>
     </div>

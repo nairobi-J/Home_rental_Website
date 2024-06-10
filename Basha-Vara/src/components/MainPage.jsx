@@ -36,18 +36,8 @@ const MainPage = () => {
         <p>Or</p>
         <button onClick={() => handleNavigation('/signUp')}>Sign Up</button>
 
-        <div className={styles.help}>
-          <button>
-            <img src="images/circle-info-solid.svg" alt="Help" />
-          </button>
-          <p>HELP</p>
-        </div>
-        <div className={styles.abtus}>
-          <button>
-            <img src="images/about.svg" alt="About Us" />
-          </button>
-          <p>ABOUT US</p>
-        </div>
+       
+      
       </div>
     </>
   );
