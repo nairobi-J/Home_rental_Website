@@ -48,33 +48,27 @@ const AboutUs = () => {
                     </ul>
                 </section>
                 
-                {/* <section className={styles.team}>
+                <section className={styles.team}>
                     <h2>Meet the Team</h2>
-                    <p>Meet our passionate team dedicated to helping you find your next home.</p>
+                    <p>Meet our passionate team dedicated to helping you find your Dream Home.</p>
                     <div className={styles.teamMembers}>
                         <div className={styles.teamMember}>
-                            <img src="team_member1.jpg" alt="Team Member 1" />
-                            <h3>John Doe</h3>
-                            <p>Property Manager</p>
+                            <img src="images/Jerin.jpeg" alt="Team Member 1" />
+                            <h3>Nusrat Jahan Jerin</h3>
+                
                         </div>
                         <div className={styles.teamMember}>
-                            <img src="team_member2.jpg" alt="Team Member 2" />
-                            <h3>Jane Smith</h3>
-                            <p>Customer Service Specialist</p>
+                            <img src="images/Sadia.jpg" alt="Team Member 2" />
+                            <h3>Sadia Farzana Jessia</h3>
+                           
                         </div>
                     </div>
-                </section> */}
-                
-                <section className={styles.testimonials}>
-                    <h2>Customer Testimonials</h2>
-                    <blockquote>
-                        “Finding a rental home in Dhaka was a breeze with DREAM  HOME BD. The team was professional, helpful, and made the entire process stress-free.” - A. Rahman
-                    </blockquote>
                 </section>
+            
                 
                 <section className={styles.journey}>
                     <h2>Our Journey</h2>
-                    <p>Founded in 2015, DREAM  HOME BD started with a simple goal: to simplify the home rental process for people in Bangladesh. Over the years, we have grown to become a trusted name in the industry, helping thousands of tenants find their perfect homes.</p>
+                    <p>Founded in 2024, DREAM  HOME BD started with a simple goal: to simplify the home rental process for people in Bangladesh.</p>
                 </section>
                 
                 <section className={styles.community}>
@@ -85,12 +79,12 @@ const AboutUs = () => {
                 <section className={styles.contact}>
                     <h2>Contact Us</h2>
                     <p>Email: info@DREAM  HOME BD.com</p>
-                    <p>Phone: +880-123-456-789</p>
-                    <p>Address: 123 Renters Lane, Dhaka, Bangladesh</p>
+                    <p>Phone: +8801792530123</p>
+                    <p>Address: Akhalia, Sylhet, Bangladesh</p>
                 </section>
                 
                 <footer className={styles.footer}>
-                    <p>Ready to find your next home? <a href="/listings">Browse our listings</a> or <a href="/contact">contact us</a> today!</p>
+                    <p>Ready to find your next home? <a href="/homePage">Browse our listings</a> or contact us today!</p>
                 </footer>
             </div>
         </div>
