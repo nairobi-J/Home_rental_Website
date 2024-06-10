@@ -13,7 +13,9 @@ const ForgotPassword = () => {
   return (
     <div>
     <Header/>
+    
     <div className={`${Styles.forgotPassword} container`}>
+    <img src="images/Logo.jpg" alt="Home Rental Logo" />
       <h1>Forgot Password?</h1>
     <p>Email:  <input></input></p>
     <p>Name:  <input></input></p> 

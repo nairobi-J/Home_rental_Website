@@ -18,7 +18,7 @@ const MainPage = () => {
       <Header />
       <div className={`${styles.mainPage} container`}>
         <div className={styles.mainImage}>
-          <img src="images/Home-Rental-Logo.jpg" alt="Home Rental Logo" />
+          <img src="images/Logo.jpg" alt="Home Rental Logo" />
         </div>
         <div className='title'>
           <h1>HOME RENTAL HELP</h1>

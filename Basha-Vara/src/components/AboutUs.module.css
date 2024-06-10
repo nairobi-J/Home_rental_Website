@@ -1,0 +1,136 @@
+:root {
+    --peach-bg: #FFDAB9;
+    --coffee-text: #6F4E37;
+    --accent-color: #FF6F61; 
+    --light-accent: #FFF5E1; 
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
+    background-color: var(--peach-bg);
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    color: var(--coffee-text);
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    background: white; 
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    max-width: 900px;
+    margin: 20px;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.header h1 {
+    font-size: 2.8em;
+    margin-bottom: 10px;
+    color: var(--coffee-text);
+}
+
+.header p {
+    font-size: 1.2em;
+    color: var(--accent-color);
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+h2 {
+    font-size: 2em;
+    color: var(--coffee-text);
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+p, ul {
+    font-size: 1.1em;
+    line-height: 1.8;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+.team {
+    text-align: center;
+}
+
+.teamMembers {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+}
+
+.teamMember {
+    text-align: center;
+}
+
+.teamMember img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    border: 4px solid var(--light-accent);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.teamMember h3 {
+    font-size: 1.2em;
+    margin-top: 10px;
+}
+
+blockquote {
+    font-style: italic;
+    border-left: 6px solid var(--accent-color);
+    padding-left: 15px;
+    margin-left: 0;
+    background-color: var(--light-accent);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.contact {
+    background-color: var(--light-accent);
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid var(--accent-color);
+}
+
+.contact p {
+    margin: 10px 0;
+}
+
+.footer {
+    text-align: center;
+    padding: 20px;
+    border-top: 1px solid var(--accent-color);
+    margin-top: 40px;
+}
+
+.footer a {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}

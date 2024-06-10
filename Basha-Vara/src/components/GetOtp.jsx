@@ -14,6 +14,7 @@ const GetOtp = () => {
     <div>
     <Header/>
     <div className={`${Styles.getOtp} container`}>
+    <img src="images/Logo.jpg" alt="Home Rental Logo" />
       <h1>Forgot Password?</h1>
     <p>OTP:  <input></input></p>
     <p>New Password:  <input></input></p> 
