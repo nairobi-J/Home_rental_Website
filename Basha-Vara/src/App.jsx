@@ -9,12 +9,7 @@ import PasswordReset from './components/PasswordReset';
 import AccountSetting from './components/AccountSetting';
 import ForgotPassword from './components/ForgotPassword';
 import GetOtp from './components/GetOtp';
-<<<<<<< HEAD
 import Navbar from './components/Navbar';
-=======
-import AboutUs from './components/AboutUs';
-
->>>>>>> 427df04da56b019e4d320307b439d2155cc3a0f9
 function App() {
   return (
     <div>
