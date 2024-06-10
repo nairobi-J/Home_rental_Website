@@ -4,6 +4,7 @@ import styles from './MainPage.module.css';
 import { motion } from 'framer-motion';
 import AnimatedTextWord from './AnimatedTextWord';
 import Header from './Header';
+import Navbar from './Navbar'
 
 const MainPage = () => {
   const navigate = useNavigate(); // Initialize the navigate function
@@ -16,9 +17,12 @@ const MainPage = () => {
   return (
     <>
       <Header />
+      
       <div className={`${styles.mainPage} container`}>
+      <Navbar/>
+  
         <div className={styles.mainImage}>
-          <img src="images/Logo.jpg" alt="Home Rental Logo" />
+          {/* <img src="images/Logo.jpg" alt="Home Rental Logo" /> */}
         </div>
         <div className='title'>
           <h1>HOME RENTAL HELP</h1>
@@ -37,7 +41,7 @@ const MainPage = () => {
         <button onClick={() => handleNavigation('/signUp')}>Sign Up</button>
 
        
-      
+       
       </div>
     </>
   );

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styles from './AccountSetting.module.css';
+import Navbar from './Navbar';
 
 const AccountSetting = () => {
   const [image, setImage] = useState(null);
@@ -23,6 +24,7 @@ const AccountSetting = () => {
 
   return (
     <div className={`${styles.signIn} container`}>
+      <Navbar/>
     <div className="profile-container">
       <h2>Profile Settings</h2>
       <form>

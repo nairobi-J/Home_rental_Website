@@ -1,13 +1,17 @@
 import React from 'react'
 import styles from './PasswordReset.module.css'
 import Header from './Header'
+import Navbar from './Navbar'
 
 const PasswordReset = () => {
   return (
     <>
     <Header />
     <div className={`${styles.passwordReset} container`}>
-    <img src="images/Logo.jpg" alt="Home Rental Logo" />
+   
+      <Navbar/>
+      
+     
         <h2>Reset Your Password</h2>
         <div className='passInfo'>
             <p>Email: <input type='Email'></input></p>

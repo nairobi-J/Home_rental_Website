@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './SignUp.module.css'
 import Header from './Header';
+import Navbar from './Navbar';
 import { useNavigate } from 'react-router-dom';
 const SignUp = () => {
 
@@ -14,7 +15,7 @@ const SignUp = () => {
     <>
     <Header/>
     <div className={`${styles.signUp} container`}>
-    <img src="images/Logo.jpg" alt="Home Rental Logo" />
+    <Navbar/>
       <h2>Create A New Account!</h2>
       <div className="info">
       <p>Name:  <input type="name"></input></p>

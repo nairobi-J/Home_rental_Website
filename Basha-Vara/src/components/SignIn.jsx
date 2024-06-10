@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './SignIn.module.css';
 import Header from './Header';
-
+import Navbar from './Navbar';
 const SignIn = () => {
   const navigate = useNavigate(); // Initialize the navigate function
 
@@ -15,7 +15,7 @@ const SignIn = () => {
     <>
       <Header />
       <div className={`${styles.signIn} container`}>
-      <img src="images/Logo.jpg" alt="Home Rental Logo" />
+      <Navbar/>
         <h2>Login To Your Account!</h2>
         <div className='loginInfo'>
           <p>Name: <input type='Name' /></p>
