@@ -23,7 +23,7 @@ const Navbar = () => {
         
         <div >
             <ul className = {styles.navi}>
-               
+            <li><a href = "/homePage">Home</a></li>
                 <li><a href = "/about">About</a></li>
                 <li><a href = "/host">Become a Host</a></li>
                 <li><a href = "/wish">WishList</a></li>
