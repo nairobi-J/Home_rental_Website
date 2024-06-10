@@ -1,0 +1,32 @@
+.navbar{
+    display: flex;
+    gap:20rem;
+    padding-top: 10px;
+    
+    
+}
+.navi{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    justify-content: space-around;
+    gap: 3rem;
+}
+li{
+  list-style: none;
+
+}
+nav {
+    justify-content: space-around;
+    align-items:center;
+    height: 17vh;
+
+}
+
+input{
+ 
+ border:none;
+ /* border-radius: 20%; */
+ height: 45px;
+ width: 200px;
+}
