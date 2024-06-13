@@ -18,6 +18,22 @@ app.post('/register', (req, res) => {
     .catch(err => res.json(err))
 })
 
+app.post('/login', (req, res) => {
+    const {email, password} = req.body
+    registerModel.findOne({email: email})
+    .then(user => {
+        if(user){
+        if(user.password === password){
+            res.json("Login Successful!")
+        } else{
+            res.json("The password is incorrect!")
+        }
+    }else{
+        res.json("No such record existed!")
+    }
+    })
+})
+
 app.listen(3001, () => {
     console.log("server running on port 3001");
 });
