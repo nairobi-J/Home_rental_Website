@@ -7,7 +7,10 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-mongoose.connect("mongodb://127.0.0.1:27017/Dream-Home-BD");
+mongoose.connect("mongodb://127.0.0.1:27017/Dream-Home-BD", {
+    useNewUrlParser: true,
+  useUnifiedTopology: true
+});
 
 app.post('/register', (req, res) => {
     registerModel.create(req.body)

@@ -7,17 +7,19 @@ import { useNavigate, Link } from 'react-router-dom';
 
 const SignUp = () => {
 
-  const [name, setName] = useState();
-  const [email, setEmail] = useState();
-  const [password, setPassword] = useState();
-  const [contact, setContact] = useState();
-  const [address, setAddress] = useState();
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [contact, setContact] = useState('');
+  const [address, setAddress] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault()
     axios.post('http://localhost:3001/register', {name, email, password, contact, address})
     .then(result => console.log(result))
     .catch(err=> console.log(err))
+    handleNavigation('/mainPage')
+
   }
 
 
@@ -36,7 +38,7 @@ const SignUp = () => {
     <div className={`${styles.signUp} container`}>
     <Navbar/>
       <h2>Create A New Account!</h2>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} method='POST'>
       <div className="info">
 
         <label htmlFor='name'>
@@ -105,7 +107,7 @@ const SignUp = () => {
       </p>
       
       </div>
-      <button type='submit' onClick= {() => handleNavigation('/mainPage')}>Sign Up</button>
+      <button type='submit'>Sign Up</button>
       </form>
     </div>
 
