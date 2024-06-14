@@ -1,16 +1,28 @@
 const express = require("express");
 const mongoose = require('mongoose');
 const cors = require('cors');
+const dotenv = require('dotenv');
 const registerModel = require('./models/Dream_Home');
 
 const app = express();
 app.use(express.json());
 app.use(cors());
 
-mongoose.connect("mongodb://127.0.0.1:27017/Dream-Home-BD", {
-    useNewUrlParser: true,
-  useUnifiedTopology: true
-});
+dotenv.config();
+
+// console.log(process.env.DBURL)
+
+// mongoose.connect("mongodb+srv://sadiajessia:sadia@1234@sadiajessia.sjy4gkn.mongodb.net/dream-home-bd");
+
+
+mongoose.connect(process.env.DBURL)
+  .then(() => {
+    console.log("Successfully connected to MongoDB");
+  })
+  .catch((error) => {
+    console.error("Error connecting to MongoDB:", error);
+    process.exit(1);
+  });
 
 app.post('/register', (req, res) => {
     registerModel.create(req.body)
