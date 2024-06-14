@@ -8,6 +8,7 @@ const HomePage = () => {
     <Header/>
     <div className={`${styles.homePage} container`}>
     <Navbar/>
+    
      
     </div>
 
