@@ -9,28 +9,29 @@ const Navbar = () => {
     <>
     <Header/>
 <div className = {styles.navbar }>
-    <div className={styles.logo}>
-    <img src = "images/Logo.jpg"/>
-    </div>
+  <a href = "/"><img src = "images/Logo.jpg"/></a>
+    
  <div className="navbar-search">
-      <input type= "text" placeholder='Search...'></input>
+      <input type= "text" placeholder='Search...'/>
           <IconButton>
            <Search sx= {{}}/>
           </IconButton>
         </div>
         
-           <nav >
+           
         
-        <div >
-            <ul className = {styles.navi}>
+        {/* <div>
+          {user ? <a  href="/cretae-list">Become A host</a> : 
+          <a href = "/signIn">become a host</a>}
+
             <li><a href = "/homePage">Home</a></li>
                 <li><a href = "/about">About</a></li>
                 <li><a href = "/host">Become a Host</a></li>
                 <li><a href = "/wish">WishList</a></li>
                 <li><a href = "/accountSetting" >Settings</a></li>
-          </ul>
-        </div>
-    </nav>
+          
+        </div> */}
+
        
      
       </div>

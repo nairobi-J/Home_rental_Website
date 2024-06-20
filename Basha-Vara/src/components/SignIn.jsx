@@ -1,76 +1,80 @@
-import {React, useState} from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './SignIn.module.css';
-import axios from 'axios';
 import Header from './Header';
 import Navbar from './Navbar';
+import { setLogin } from '../redux/state';
+import { useDispatch } from 'react-redux';
+
 const SignIn = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-
-  const handleSubmit = (e) => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    axios.post('http://localhost:3001/login', { email, password })
-      .then(result => {
-        console.log(result);
-        if (result.data === "Login Successful!") {
-          handleNavigation('/homePage');
+    try {
+      const response = await fetch("http://localhost:3000/auth/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, password }),
+      });
+  
+      if (!response.ok) {
+        const error = await response.json();
+        console.log('Error:', response.status, error.message);
+        // Handle specific error messages
+        if (response.status === 409) {
+          console.log("User doesn't exist");
+        } else if (response.status === 400) {
+          console.log('Wrong password');
         } else {
-          console.log(result.data); 
+          console.log('An unknown error occurred');
         }
-      })
-      .catch(err => console.log(err));
+        return;
+      }
+  
+      const loggedIn = await response.json();
+      dispatch(setLogin({
+        user: loggedIn.user,
+        token: loggedIn.token,
+      }));
+      navigate('/homePage');
+    } catch (err) {
+      console.log('Login failed', err.message);
+    }
   };
   
-
-
-  const navigate = useNavigate(); // Initialize the navigate function
-
-  // Function to handle navigation
-  const handleNavigation = (route) => {
-    navigate(route);
-  };
-
+  
   return (
     <>
       <Header />
-      <div className={`${styles.signIn} container`}>
-      <Navbar/>
-        <h2>Login To Your Account!</h2>
-        <form onSubmit={handleSubmit} method='POST'>
-       
-        <div className="loginInfo">
-      <label htmlFor='email'>
-        
-        </label>
-      <p>Email:  <input
-                   type="mail"
-        
-                  autoComplete='off'
-                  name='email'
-                   placeholder='Enter Email'
-                   onChange={(e) => setEmail(e.target.value)}
-                   />
-      </p>
-      </div>
-      <div className="loginInfo">
-      <label htmlFor='password'>
-          
-        </label>
-      <p>Password:  <input type="password"
-                           autoComplete='off'
-                           name='password'
-                           placeholder='Enter a Strong Password'
-                           onChange={(e) => setPassword(e.target.value)}
-                           />
-      </p>
-      </div>
-
-        <button type='submit'>Log in</button>
-        
-        <div>
-          <a href='./forgotPassword'>Forgot Password?</a>
-        </div>
+      <Navbar />
+      <div className='signIn'>
+        <form onSubmit={handleSubmit}>
+          <div className="email">
+            <input
+              type="email"
+              placeholder='Email'
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+          </div>
+          <div className="password">
+            <input
+              type="password"
+              placeholder='Password'
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+          </div>
+          <div className="login">
+            <button type='submit'>Log in</button>
+          </div>
         </form>
       </div>
     </>
@@ -78,3 +82,4 @@ const SignIn = () => {
 };
 
 export default SignIn;
+
