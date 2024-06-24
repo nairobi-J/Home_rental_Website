@@ -29,7 +29,7 @@ const Navbar = () => {
           <div className="navbar-right">
             {user ? (<a href = '/createList'>Be the Host</a>)
             : (
-              <a href = '/logIn'>Become a host</a>
+              <a href = '/signIn'>Become a host</a>
             )}
             <button className='navbar-right-acc' onClick = {()=>setDropdownMenu(!dropdownMenu)}>
               <Menu sx = {{}}/>
