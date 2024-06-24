@@ -13,6 +13,7 @@ import Navbar from './components/Navbar';
 import AboutUs from './components/AboutUs'
 import Host from './components/Host'
 import WishList from './components/WishList';
+
 function App() {
   return (
     <div>
@@ -30,6 +31,7 @@ function App() {
           <Route path='/about' element={<AboutUs />} />
           <Route path='/host' element = {<Host/>} />
           <Route path='/wish' element = {<WishList/>}/>
+          {/* <Route path = '/category' element = {<Categories/>}/> */}
 
         </Routes>
       </BrowserRouter>
