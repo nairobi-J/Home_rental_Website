@@ -150,6 +150,7 @@ const CreateList = () => {
   return (
     <>
       <Navbar />
+      
       <div className={`${styles['create-listing']} container`}>
         <h1>Publish Your Place</h1>
         <form onSubmit = {handlePost}>

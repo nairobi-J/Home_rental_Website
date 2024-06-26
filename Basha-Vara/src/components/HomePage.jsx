@@ -16,7 +16,7 @@ const HomePage = () => {
     <Navbar/>
     <Slide />
     <Categories/> */}
-   <h2>hi</h2>
+   
    <Header/>
    <Navbar/>
    <Slide/>

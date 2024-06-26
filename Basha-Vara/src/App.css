@@ -5,7 +5,7 @@
 
 .container{
   height: 100%;
-  background-color: blanchedalmond;
+  background-color: rgb(255, 253, 250);
   
   
 
@@ -13,7 +13,7 @@
 button{
   background-color: transparent;
   background-color: rgb(50, 8, 8);
-  color: rgb(108, 168, 221);
+  color: rgb(48, 142, 224);
  
 
  }
@@ -44,7 +44,7 @@ a:hover{
 }
 button:hover{
   /* what happens when we touch */
-  color: rgb(225, 147, 147);
+  color: rgb(245, 144, 144);
   text-decoration: underline;
   text-underline-offset: 1rem;
   text-decoration-color: rgb(181, 181, 181);

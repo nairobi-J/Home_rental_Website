@@ -4,7 +4,7 @@
 .create-listing {
     display: flex;
     flex-direction: column;
-    padding: 4px 6px 10px;
+    padding: 100px 100px 100px;
    
 }
 
@@ -75,8 +75,8 @@
 }
 
 .category.selected {
-    border: 2px solid rgb(62, 20, 154);
-    background-color: var(--lightgrey);
+    border: 2px solid rgb(193, 164, 255);
+    background-color: #66f137;
 }
 
 .type-list {
@@ -121,9 +121,10 @@
 }
 
 .type.selected {
-    border: 2px solid red;
-   /* // background-color: var(--lightgrey); */
+    border: 8px solid #66f137;
+    /* background-color: rgb(102, 241, 55); */
 }
+
   .full {
         max-width: 1000px;
         padding: 0px 3px;
@@ -256,7 +257,7 @@
             
             .amenity.selected {
                 border: 2px solid rgb(79, 6, 236);
-                background-color: var(--lightgrey);
+                background-color: #66f137;
             }
 
             .photos{
