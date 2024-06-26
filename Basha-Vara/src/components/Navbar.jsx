@@ -255,13 +255,16 @@ const Navbar = () => {
             <Search />
           </IconButton>
         </div>
-
-        <div className={styles.navbarRight}>
-          {user ? (
+        <div className="beHost">
+        {user ? (
             <a href="/createList" className={styles.hostLink}>Be the Host</a>
           ) : (
             <a href="/logIn" className={styles.hostLink}>Become a host</a>
           )}
+        </div>
+       
+        <div className={styles.navbarRight}>
+         
           <button className={styles.accountButton} onClick={() => setDropdownMenu(!dropdownMenu)}>
             <Menu />
             {!user ? (
