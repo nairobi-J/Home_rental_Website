@@ -1,8 +1,10 @@
-const router = require('express').Router();
-const bcrypt = require('bcryptjs');
-const jwt = require('jsonwebtoken');
-const multer = require('multer');
-const User = require('../models/User');
+import express from 'express';
+import bcrypt from 'bcryptjs';
+import jwt from 'jsonwebtoken';
+import multer from 'multer';
+import User from '../models/User.js'; // Ensure the correct path
+
+const router = express.Router();
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
@@ -74,4 +76,4 @@ router.post('/login', async (req, res) => {
   }
 });
 
-module.exports = router;
+export default router;

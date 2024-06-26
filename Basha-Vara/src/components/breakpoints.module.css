@@ -1,0 +1,51 @@
+:root {
+    --breakpoint-sm: 480px;
+    --breakpoint-mm: 580px;
+    --breakpoint-md: 720px;
+    --breakpoint-ml: 820px;
+    --breakpoint-lg: 1000px;
+    --breakpoint-xl: 1120px;
+  }
+  
+  @media (max-width: var(--breakpoint-sm)) {
+    .sm {
+      /* You can apply styles directly here */
+      @content;
+    }
+  }
+  
+  @media (max-width: var(--breakpoint-mm)) {
+    .mm {
+      /* Styles for mm breakpoint */
+      @content;
+    }
+  }
+  
+  @media (max-width: var(--breakpoint-md)) {
+    .md {
+      /* Styles for md breakpoint */
+      @content;
+    }
+  }
+  
+  @media (max-width: var(--breakpoint-ml)) {
+    .ml {
+      /* Styles for ml breakpoint */
+      @content;
+    }
+  }
+  
+  @media (max-width: var(--breakpoint-lg)) {
+    .lg {
+      /* Styles for lg breakpoint */
+      @content;
+    }
+  }
+  
+  @media (max-width: var(--breakpoint-xl)) {
+    .xl {
+      /* Styles for xl breakpoint */
+      @content;
+    }
+  }
+  
