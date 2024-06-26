@@ -1,7 +1,90 @@
-.signIn{
+/* .signIn{
+    padding-top: 150px;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding-top: 50px;
     gap:20px;
+} */
+
+/* Basic Styles for the Page */
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: #333; /* Dark background */
+    padding: 15px; /* Padding for spacing */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white; /* White text for contrast */
+    width: 100%; /* Full width */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Container for main content */
+.container {
+    margin-top: 100px; /* Space for navbar */
+    padding: 20px; /* Padding for spacing */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Full viewport height */
+    background-color: #f9f9f9; /* Light background */
+}
+
+/* Sign-in form container */
+.signIn {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    background-color: white; /* White background for form */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+}
+
+/* Styles for input fields */
+.signIn input {
+    width: 300px; /* Consistent width */
+    padding: 10px; /* Padding for spacing */
+    margin-bottom: 20px; /* Space between inputs */
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 16px; /* Font size for readability */
+}
+
+/* Styles for login button */
+.signIn button {
+    width: 100%; /* Full width button */
+    padding: 10px; /* Padding for spacing */
+    background-color: #333; /* Dark background */
+    color: white; /* White text */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 18px; /* Larger font for emphasis */
+    transition: background-color 0.3s; /* Smooth background color transition */
+}
+
+/* Hover effect for button */
+.signIn button:hover {
+    background-color: #555; /* Slightly lighter on hover */
+}
+
+/* Adjust the spacing between navbar and form on small screens */
+@media (max-width: 600px) {
+    .container {
+        margin-top: 80px; /* Adjust margin for smaller screens */
+    }
+    .signIn {
+        width: 90%; /* Full width on small screens */
+        padding: 20px; /* Less padding for smaller screens */
+    }
 }
