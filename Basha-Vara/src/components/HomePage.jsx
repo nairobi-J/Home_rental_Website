@@ -5,7 +5,7 @@ import Navbar from './Navbar';
 import Categories from './Categories';
 import  Slide  from './Slide';
 
-
+import Listings from './Listings';
 
 
 const HomePage = () => {
@@ -20,7 +20,8 @@ const HomePage = () => {
    <Header/>
    <Navbar/>
    <Slide/>
-<Categories/>
+{/* <Categories/> */}
+<Listings/>
  
     
 
