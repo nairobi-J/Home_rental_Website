@@ -1,17 +1,14 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { categories } from '../data';
 import { Category } from '@mui/icons-material';
 import ListingCard from './ListingCard';
 import Loader from './Loader';
+import {setListings} from "../redux/state"
+
 // import { useDispatch } from 'react-redux';
 import { TbBeach, TbMountain, TbPool } from 'react-icons/tb';
-import {
-  GiBarn, GiBoatFishing, GiCactus, GiCastle, GiCaveEntrance, GiForestCamp,
-  GiIsland, GiWindmill, GiHeatHaze, GiCctvCamera, GiBarbecue, GiToaster, GiCampfire} from 'react-icons/gi';
-import { FaSkiing, FaPumpSoap, FaShower, FaFireExtinguisher, FaUmbrellaBeach, FaKey } 
-from 'react-icons/fa';
-import { FaHouseUser, FaPeopleRoof, FaKitchenSet,FaBangladeshiTakaSign } from 'react-icons/fa6';
-import { BiSolidWasher, BiSolidDryer, BiSolidFirstAid, BiWifi, BiSolidFridge, BiWorld, BiTrash} from 'react-icons/bi';
+import {GiBarn, GiBoatFishing, GiCactus, GiCastle, GiCaveEntrance, GiForestCamp,GiIsland, GiWindmill, GiHeatHaze, GiCctvCamera, GiBarbecue, GiToaster, GiCampfire} from 'react-icons/gi';import { FaSkiing, FaPumpSoap, FaShower, FaFireExtinguisher, FaUmbrellaBeach, FaKey } 
+from 'react-icons/fa';import { FaHouseUser, FaPeopleRoof, FaKitchenSet,FaBangladeshiTakaSign } from 'react-icons/fa6';import { BiSolidWasher, BiSolidDryer, BiSolidFirstAid, BiWifi, BiSolidFridge, BiWorld, BiTrash} from 'react-icons/bi';
 import { BsSnow, BsFillDoorOpenFill, BsPersonWorkspace } from 'react-icons/bs';
 import { IoDiamond } from 'react-icons/io5';
 import { MdOutlineVilla, MdMicrowave, MdBalcony, MdYard, MdPets } from 'react-icons/md';
@@ -37,21 +34,36 @@ const Listings = () => {
     const listings = useSelector( (state) => state.listings)
       const getFeedListings = async () => {
           try{
-                const response = await fetch("http://localhost3000/")
+          
+                const response = await fetch(
+                     selectedCategory !== "All"?
+                  `http://localhost:3000/lists?category=${selectedCategory}`:
+                  "http://localhost:3000/lists",
+                 { method:"GET"}
+                );
+                const data = await response.json()
+                dispatch(setListings({listings: data}))
+                setLoading(false)
 
           }
           catch(err){
-
+                console.log("fetch listing failes", err.message)
           }
       }
+
+      useEffect(()=> {
+          getFeedListings()
+      }, [selectedCategory])
+
+      console.log(listings)
   return (
-    <div>
+    <>
      <div className="category-list">
       {
         categories?.map((item, index) => {
            const IconComp = iconMap[item.icon];
            return(
-            <div className="category" key = {index}>
+            <div className="category" key = {index} onClick={()=> setSelectedCategory(item.label)}>
                 <div className="category-icon">
                     {IconComp && <IconComp/>}
                 </div>
@@ -62,7 +74,32 @@ const Listings = () => {
         })
       }
      </div>
-    </div>
+    {loading? <Loader/>: 
+    
+     <div className="listings">
+        {listings.map((
+         { _id, 
+          creator,
+          listingPhotoPaths,
+          city,district, 
+          thana, 
+          category, 
+          type, 
+          price}) => (<ListingCard
+          listingId = {_id}
+          creator = {creator}
+          listingPhotoPaths = {listingPhotoPaths}
+          city = {city}
+          district = {district}
+          thana = {thana}
+          category = {category}
+          type = {type}
+          price = {price}
+          />))}
+     </div>
+    
+    }
+    </>
   );
 }
 

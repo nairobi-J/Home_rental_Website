@@ -87,7 +87,7 @@ router.get('/', async (req, res) => {
         if (qCategory) {
             listings = await Listing.find({ category: qCategory }).populate("creator");
         } else {
-            listings = await Listing.find();
+            listings = await Listing.find().populate("creator");
         }
         res.status(200).json(listings);
     } catch (err) {
