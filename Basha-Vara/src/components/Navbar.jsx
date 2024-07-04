@@ -227,7 +227,7 @@ import { IconButton } from '@mui/material';
 import { Search, Menu, Person } from '@mui/icons-material';
 import styles from './Navbar.module.css';
 import { useSelector, useDispatch } from 'react-redux';
-import { setLogOut } from '../redux/state';
+import { setLogOut } from '../redux/userSlice';
 import { Link } from 'react-router-dom';
 
 const Navbar = () => {

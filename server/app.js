@@ -15,7 +15,7 @@ app.use(express.json());
 app.use(express.static('public'));
 
 app.use('/auth', authRoutes);
-app.use('/lists', listingRoutes);
+app.use('/listings', listingRoutes);
 
 const PORT = 3000 || 4000;
 mongoose.connect(process.env.DBURL, {

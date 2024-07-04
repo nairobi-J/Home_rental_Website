@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
 import MainPage from './components/MainPage';
@@ -10,14 +10,18 @@ import AccountSetting from './components/AccountSetting';
 import ForgotPassword from './components/ForgotPassword';
 import GetOtp from './components/GetOtp';
 import Navbar from './components/Navbar';
-import AboutUs from './components/AboutUs'
-import Host from './components/Host'
+import AboutUs from './components/AboutUs';
+import Host from './components/Host';
 import WishList from './components/WishList';
 import CreateList from './components/CreateList';
+import ListingDetails from './components/ListingDetails';
+import Listings from './components/Listings';
+
 function App() {
   return (
     <div>
       <BrowserRouter>
+        <Navbar />
         <Routes>
           <Route index element={<MainPage />} />
           <Route path='/mainPage' element={<MainPage />} />
@@ -29,12 +33,11 @@ function App() {
           <Route path='/forgotPassword' element={<ForgotPassword />} />
           <Route path='/getOtp' element={<GetOtp />} />
           <Route path='/about' element={<AboutUs />} />
-          <Route path='/host' element = {<Host/>} />
-          <Route path='/wish' element = {<WishList/>}/>
-          <Route path='/createList' element = {<CreateList/>}/>
-
-          {/* <Route path = '/category' element = {<Categories/>}/> */}
-
+          <Route path='/host' element={<Host />} />
+          <Route path='/wish' element={<WishList />} />
+          <Route path='/createList' element={<CreateList />} />
+          <Route path='/listings/:listingId' element={<ListingDetails />} />
+          <Route path='/listings' element={<Listings />} />
         </Routes>
       </BrowserRouter>
     </div>

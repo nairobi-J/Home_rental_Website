@@ -3,15 +3,32 @@
 
 /* ListingCard.module.scss */
 .listing-card {
+  height: 100%;
+  width: 20.5%;
   position: relative;
+    
+  background-color: rgb(246, 246, 246);
   cursor: pointer;
+  
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  
   padding: 10px;
   border-radius: 10px;
 
-  /* &:hover {
-    /* box-shadow: var(--shadow); Assuming shadow is defined in variables.scss */
- /* }  */
+  box-shadow:10px black;
+
+
+  border-color: rgb(12, 12, 12);
   
+  
+
+  &:hover {
+    box-shadow: red; 
+  }  
+}
 
   .image-slider{
     width: 300px;
@@ -44,8 +61,9 @@
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
+      height: 10px;
       padding: 6px;
-      border-radius: 50%;
+      border-radius: 10%;
       border: none;
       cursor: pointer;
       display: flex;
@@ -92,4 +110,4 @@
     z-index: 999;
     background: none;
   }
-}
+
