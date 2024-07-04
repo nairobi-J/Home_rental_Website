@@ -3,7 +3,7 @@ import { categories } from '../data';
 import { Category } from '@mui/icons-material';
 import ListingCard from './ListingCard';
 import Loader from './Loader';
-import {setListings} from "../redux/state"
+import {setListings} from "../redux/userSlice"
 
 // import { useDispatch } from 'react-redux';
 import { TbBeach, TbMountain, TbPool } from 'react-icons/tb';
@@ -37,8 +37,8 @@ const Listings = () => {
           
                 const response = await fetch(
                      selectedCategory !== "All"?
-                  `http://localhost:3000/lists?category=${selectedCategory}`:
-                  "http://localhost:3000/lists",
+                  `http://localhost:3000/listings?category=${selectedCategory}`:
+                  "http://localhost:3000/listings",
                  { method:"GET"}
                 );
                 const data = await response.json()

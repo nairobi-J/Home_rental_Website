@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ArrowBackIosNew, ArrowForwardIos } from '@mui/icons-material';
 import Styles from './ListingCard.module.css';
+import { FaBangladeshiTakaSign } from 'react-icons/fa6';
 
 const ListingCard = ({
   listingId,
@@ -13,6 +14,12 @@ const ListingCard = ({
   type,
   price
 }) => {
+  const handleClick = () => {
+    // Change this to your target URL
+    window.location.href = `http://localhost:3000/listings/${listingId}`;
+};
+
+  console.log(listingId)
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const goToPrevSlide = () => {
@@ -24,7 +31,7 @@ const ListingCard = ({
   };
 
   return (
-    <div className={`${Styles['listing-card']} container`}>
+    <div className={`${Styles['listing-card']} container`}  >
       <div className={`${Styles['image-slider']} container`}>
         <div className={`${Styles.slider} container`} style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
           {listingPhotoPaths?.map((item, index) => (
@@ -43,6 +50,17 @@ const ListingCard = ({
           ))}
         </div>
       </div>
+
+      <h3>{thana},{city}, {district}</h3>
+      <p>{category}</p>
+      <p>{type}</p>
+      <p>
+        <span>
+          <FaBangladeshiTakaSign />{price}
+        </span>
+        Per Month
+      </p>
+      <button onClick = {handleClick}>See details</button>
     </div>
   );
 }

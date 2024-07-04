@@ -91,7 +91,7 @@ import { useNavigate } from 'react-router-dom';
 import styles from './SignIn.module.css';
 import Header from './Header';
 import Navbar from './Navbar';
-import { setLogin } from '../redux/state';
+import { setLogin } from '../redux/userSlice';
 import { useDispatch } from 'react-redux';
 
 const SignIn = () => {
