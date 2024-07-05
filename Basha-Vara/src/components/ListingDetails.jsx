@@ -1,7 +1,26 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { facilities } from '../data';
-import Loader from './Loader';
+import Loader from './Loader';import { TbBeach, TbMountain, TbPool } from 'react-icons/tb';
+import {GiBarn, GiBoatFishing, GiCactus, GiCastle, GiCaveEntrance, GiForestCamp,GiIsland, GiWindmill, GiHeatHaze, GiCctvCamera, GiBarbecue, GiToaster, GiCampfire} from 'react-icons/gi';import { FaSkiing, FaPumpSoap, FaShower, FaFireExtinguisher, FaUmbrellaBeach, FaKey } 
+from 'react-icons/fa';import { FaHouseUser, FaPeopleRoof, FaKitchenSet,FaBangladeshiTakaSign } from 'react-icons/fa6';import { BiSolidWasher, BiSolidDryer, BiSolidFirstAid, BiWifi, BiSolidFridge, BiWorld, BiTrash} from 'react-icons/bi';
+import { BsSnow, BsFillDoorOpenFill, BsPersonWorkspace } from 'react-icons/bs';
+import { IoDiamond } from 'react-icons/io5';
+import { MdOutlineVilla, MdMicrowave, MdBalcony, MdYard, MdPets } from 'react-icons/md';
+import { PiBathtubFill, PiCoatHangerFill, PiTelevisionFill } from 'react-icons/pi';
+import { TbIroning3 } from 'react-icons/tb';
+import { AiFillCar } from 'react-icons/ai';
+import {IoIosImages} from 'react-icons/io'
+import { useDispatch, useSelector } from 'react-redux';
+const iconMap = {
+  TbBeach, TbMountain, TbPool, GiBarn, GiBoatFishing, GiCactus, GiCastle,
+  GiCaveEntrance, GiForestCamp, GiIsland, GiWindmill, FaSkiing, FaPumpSoap,
+  FaShower, FaFireExtinguisher, FaUmbrellaBeach, FaKey, FaHouseUser, FaPeopleRoof,
+  FaKitchenSet, BiSolidWasher, BiSolidDryer, BiSolidFirstAid, BiWifi, BiSolidFridge,
+  BiWorld, BsSnow, BsFillDoorOpenFill, BsPersonWorkspace, MdOutlineVilla, MdMicrowave,
+  MdBalcony, MdYard, MdPets, PiBathtubFill, PiCoatHangerFill, PiTelevisionFill, TbIroning3,
+  GiHeatHaze, GiCctvCamera, GiBarbecue, GiToaster, GiCampfire, AiFillCar, IoDiamond
+};
 
 const ListingDetails = () => {
     const [loading, setLoading] = useState(true);
@@ -15,6 +34,7 @@ const ListingDetails = () => {
                 throw new Error(`HTTP error! Status: ${response.status}`);
             }
             const data = await response.json();
+            console.log(data); // Log the response
             setListing(data);
             setLoading(false);
         } catch (err) {
@@ -32,6 +52,9 @@ const ListingDetails = () => {
         return <p>Listing not found.</p>;
     }
 
+    const { creator } = listing;
+    console.log(creator); // Log creator info
+
     return (
         <div className="listing-details">
             <div className="title">
@@ -47,10 +70,10 @@ const ListingDetails = () => {
             <p>{listing.personCount} Person (preferred). {listing.bedroomCount} Bedroom. {listing.bathroomCount} Bathroom. {listing.balconyCount} Balcony</p>
             <hr />
             <div className="creator">
-                {listing.creator && listing.creator.profileImagePath ? (
+                {creator && creator.profileImagePath ? (
                     <>
-                        <img src={`http://localhost:3000/${listing.creator.profileImagePath.replace("public", "")}`} alt="creator" />
-                        <h3>Created by {listing.creator.name}</h3>
+                        <img src={`http://localhost:3000/${creator.profileImagePath.replace("public", "")}`} alt="creator" />
+                        <h3>Created by {creator.name}</h3>
                     </>
                 ) : (
                     <p>Creator information not available.</p>
