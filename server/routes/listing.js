@@ -99,7 +99,8 @@ router.get('/', async (req, res) => {
 router.get('/:listingId', async(req, res) => {
     try{
         const {listingId} = req.params
-        const listing = await Listing.findById(listingId)
+        const listing = await Listing.findById(listingId).populate('creator')
+
         res.status(202).json(listing)
     }
     catch(err){

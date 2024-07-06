@@ -1,31 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { facilities } from '../data';
-import Loader from './Loader';import { TbBeach, TbMountain, TbPool } from 'react-icons/tb';
-import {GiBarn, GiBoatFishing, GiCactus, GiCastle, GiCaveEntrance, GiForestCamp,GiIsland, GiWindmill, GiHeatHaze, GiCctvCamera, GiBarbecue, GiToaster, GiCampfire} from 'react-icons/gi';import { FaSkiing, FaPumpSoap, FaShower, FaFireExtinguisher, FaUmbrellaBeach, FaKey } 
-from 'react-icons/fa';import { FaHouseUser, FaPeopleRoof, FaKitchenSet,FaBangladeshiTakaSign } from 'react-icons/fa6';import { BiSolidWasher, BiSolidDryer, BiSolidFirstAid, BiWifi, BiSolidFridge, BiWorld, BiTrash} from 'react-icons/bi';
-import { BsSnow, BsFillDoorOpenFill, BsPersonWorkspace } from 'react-icons/bs';
-import { IoDiamond } from 'react-icons/io5';
-import { MdOutlineVilla, MdMicrowave, MdBalcony, MdYard, MdPets } from 'react-icons/md';
-import { PiBathtubFill, PiCoatHangerFill, PiTelevisionFill } from 'react-icons/pi';
-import { TbIroning3 } from 'react-icons/tb';
-import { AiFillCar } from 'react-icons/ai';
-import {IoIosImages} from 'react-icons/io'
-import { useDispatch, useSelector } from 'react-redux';
-const iconMap = {
-  TbBeach, TbMountain, TbPool, GiBarn, GiBoatFishing, GiCactus, GiCastle,
-  GiCaveEntrance, GiForestCamp, GiIsland, GiWindmill, FaSkiing, FaPumpSoap,
-  FaShower, FaFireExtinguisher, FaUmbrellaBeach, FaKey, FaHouseUser, FaPeopleRoof,
-  FaKitchenSet, BiSolidWasher, BiSolidDryer, BiSolidFirstAid, BiWifi, BiSolidFridge,
-  BiWorld, BsSnow, BsFillDoorOpenFill, BsPersonWorkspace, MdOutlineVilla, MdMicrowave,
-  MdBalcony, MdYard, MdPets, PiBathtubFill, PiCoatHangerFill, PiTelevisionFill, TbIroning3,
-  GiHeatHaze, GiCctvCamera, GiBarbecue, GiToaster, GiCampfire, AiFillCar, IoDiamond
-};
+import Loader from './Loader';
 
 const ListingDetails = () => {
     const [loading, setLoading] = useState(true);
     const { listingId } = useParams();
     const [listing, setListing] = useState(null);
+    const [multiplier, setMultiplier] = useState(1); // State for the input value
 
     const getListingDetails = async () => {
         try {
@@ -34,7 +15,7 @@ const ListingDetails = () => {
                 throw new Error(`HTTP error! Status: ${response.status}`);
             }
             const data = await response.json();
-            console.log(data); // Log the response
+            console.log(data); // Log the response to ensure it contains 'creator'
             setListing(data);
             setLoading(false);
         } catch (err) {
@@ -53,13 +34,17 @@ const ListingDetails = () => {
     }
 
     const { creator } = listing;
-    console.log(creator); // Log creator info
+    console.log(creator); // Log creator info to ensure it exists
+
+    const handleMultiplierChange = (event) => {
+        const value = parseInt(event.target.value, 10);
+        setMultiplier(isNaN(value) || value < 1 ? 1 : value);
+    };
 
     return (
         <div className="listing-details">
             <div className="title">
                 <h1>{listing.title}</h1>
-                <div></div>
             </div>
             <div className="photos">
                 {listing.listingPhotoPaths?.map((item, index) => (
@@ -92,12 +77,19 @@ const ListingDetails = () => {
                         {listing.amenity?.map((item, index) => (
                             <div className="amenity" key={index}>
                                 <div className="facility-icon">
-                                    {facilities.find(facility => facility.name === item)?.icon}
+                                    {/* Ensure the facilities and icons are mapped correctly */}
                                 </div>
                                 <p>{item}</p>
                             </div>
                         ))}
                     </div>
+                </div>
+                <div className="price-calculation">
+                    <label>
+                        How Many Months you want to give advance? (atleast one month needed):
+                        <input type="number" value={multiplier} onChange={handleMultiplierChange} />
+                    </label>
+                    <p>Price: {listing.price} x {multiplier} = {listing.price * multiplier}</p>
                 </div>
                 <button className='button' type="submit">
                     Rent
