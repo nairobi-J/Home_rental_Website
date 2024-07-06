@@ -89,7 +89,7 @@ const CreateList = () => {
               listingForm.append("listingPhotos", photo);
           });
 
-          const response = await fetch("http://localhost:3000/lists/create", {
+          const response = await fetch("http://localhost:3000/listings/create", {
               method: "POST",
               body: listingForm
           });
