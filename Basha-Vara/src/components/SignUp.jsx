@@ -178,7 +178,7 @@ const SignUp = () => {
           
     
             if (response.ok) {
-                navigate('/homePage');
+                navigate('/signIn');
             } else {
                 const errorData = await response.json();
                 console.error('Registration failed:', errorData);
