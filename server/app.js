@@ -5,6 +5,7 @@ import cors from 'cors';
 import User from './models/User.js';
 import authRoutes from './routes/auth.js';
 import listingRoutes from './routes/listing.js';
+import reviewRoutes from './routes/review.js';
 
 dotenv.config();
 
@@ -16,6 +17,7 @@ app.use(express.static('public'));
 
 app.use('/auth', authRoutes);
 app.use('/listings', listingRoutes);
+app.use('/reviews', reviewRoutes);
 
 
 const PORT = 3000 || 4000;
