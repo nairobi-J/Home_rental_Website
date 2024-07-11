@@ -1,0 +1,131 @@
+/* .listingDetails {
+    padding: 20px;
+}
+
+.title {
+    margin-bottom: 20px;
+}
+
+.photos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.photos img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 5px;
+}
+
+.creator {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.creator img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.rent {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.amenities {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.amenity {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.facilityIcon {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.facilityIcon img {
+    width: 20px;
+    height: 20px;
+    object-fit: cover;
+} */
+
+.listingDetails {
+    padding: 20px;
+}
+
+.title {
+    margin-bottom: 20px;
+}
+
+.photos img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.creator {
+    display: flex;
+    align-items: center;
+}
+
+.creator img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.rent {
+    margin-top: 20px;
+}
+
+.amenities {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.amenity {
+    width: 30%;
+    margin-bottom: 10px;
+}
+
+.facilityIcon {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+
+.price-calculation {
+    margin-top: 20px;
+}
+
+.button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #45a049;
+}

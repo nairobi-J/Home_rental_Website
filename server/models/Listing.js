@@ -1,6 +1,7 @@
 
 import mongoose from 'mongoose';
-import { Schema } from 'mongoose';
+const { Schema } = mongoose;
+
 const ListingSchema = new Schema({
     creator: {
         type: Schema.Types.ObjectId,
