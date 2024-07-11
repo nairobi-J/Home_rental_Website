@@ -32,12 +32,27 @@ router.post('/', async (req, res) => {
 });
 
 // Fetching reviews for a particular listing
+// router.get('/:listingId', async (req, res) => {
+//   try {
+//     const reviews = await Review.find({ listingId: req.params.listingId }).populate('userId', 'name');
+//     res.status(200).json(reviews);
+//   } catch (error) {
+//     console.log('Error fetching reviews:', error.message);
+//     res.status(500).json({ error: 'Failed to fetch reviews!' });
+//   }
+// });
+
 router.get('/:listingId', async (req, res) => {
   try {
-    const reviews = await Review.find({ listingId: req.params.listingId }).populate('userId', 'name');
+    const reviews = await Review.find({ listingId: req.params.listingId })
+      .populate({
+        path: 'userId',
+        select: 'name', // Only select the 'name' field from the User model
+      })
+      .exec();
+
     res.status(200).json(reviews);
   } catch (error) {
-    console.log('Error fetching reviews:', error.message);
     res.status(500).json({ error: 'Failed to fetch reviews!' });
   }
 });
