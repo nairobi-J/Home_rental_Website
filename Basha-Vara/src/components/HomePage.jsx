@@ -6,7 +6,7 @@ import Categories from './Categories';
 import  Slide  from './Slide';
 
 import Listings from './Listings';
-
+import NationalId from './NationalId';
 
 const HomePage = () => {
   return (
@@ -18,10 +18,7 @@ const HomePage = () => {
     <Categories/> */}
    
    <Header/>
-   <Navbar/>
-   <Slide/>
-{/* <Categories/> */}
-<Listings/>
+   <NationalId/>
  
     
 

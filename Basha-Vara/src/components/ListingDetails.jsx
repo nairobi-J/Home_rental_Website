@@ -1,32 +1,36 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import Loader from './Loader';
 import Review from './Review';
+import FileUpload from './FileUpload';
 import styles from './ListingDetails.module.css';
-
 
 const ListingDetails = () => {
     const [loading, setLoading] = useState(true);
-    const { listingId } = useParams();
     const [listing, setListing] = useState(null);
-    const [multiplier, setMultiplier] = useState(1); // State for the input value
-
-    const getListingDetails = async () => {
-        try {
-            const response = await fetch(`http://localhost:3000/listings/${listingId}`);
-            if (!response.ok) {
-                throw new Error(`HTTP error! Status: ${response.status}`);
-            }
-            const data = await response.json();
-            console.log(data); // Log the response to ensure it contains 'creator'
-            setListing(data);
-            setLoading(false);
-        } catch (err) {
-            console.log("Fetch listing details failed", err.message);
-        }
-    };
+    const [multiplier, setMultiplier] = useState(1);
+    const [nationalIdPhotoPaths, setNationalIdPhotoPaths] = useState([]);
+    
+    const { listingId } = useParams();
+    const navigate = useNavigate();
+    const customerId = useSelector((state) => state?.user?._id);
 
     useEffect(() => {
+        const getListingDetails = async () => {
+            try {
+                const response = await fetch(`http://localhost:3000/listings/${listingId}`);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+                const data = await response.json();
+                setListing(data);
+                setLoading(false);
+            } catch (err) {
+                console.log("Fetch listing details failed", err.message);
+            }
+        };
+
         getListingDetails();
     }, [listingId]);
 
@@ -37,19 +41,49 @@ const ListingDetails = () => {
     }
 
     const { creator } = listing;
-    console.log(creator); // Log creator info to ensure it exists
 
     const handleMultiplierChange = (event) => {
         const value = parseInt(event.target.value, 10);
         setMultiplier(isNaN(value) || value < 1 ? 1 : value);
     };
 
+    const handleSubmit = async () => {
+        try {
+            const rentForm = {
+                customerId,
+                listingId,
+                hostId: listing.creator._id,
+                advanceMonths: multiplier,
+                nationalIdPhotoPaths,
+                totalPrice: listing.price * multiplier,
+            };
+
+            const response = await fetch("http://localhost:3000/rent/create", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(rentForm),
+            });
+
+            if (response.ok) {
+                 navigate(`/${customerId}`);
+            }
+        } catch (err) {
+            console.log("submit Rent failed", err.message);
+        }
+    };
+
+    const handleUploadSuccess = (paths) => {
+        setNationalIdPhotoPaths(paths);
+    };
+
     return (
-        <div className="listing-details">
-            <div className="title">
+        <div className={styles['listing-details']}>
+            <div className={styles['title']}>
                 <h1>{listing.title}</h1>
             </div>
-            <div className="photos">
+            <div className={styles['photos']}>
                 {listing.listingPhotoPaths?.map((item, index) => (
                     <img key={index} src={`http://localhost:3000/${item.replace("public", "")}`} alt={`listing photo ${index + 1}`} />
                 ))}
@@ -57,7 +91,7 @@ const ListingDetails = () => {
             <h2>{listing.type} in {listing.thana}, {listing.district}, {listing.city}</h2>
             <p>{listing.personCount} Person (preferred). {listing.bedroomCount} Bedroom. {listing.bathroomCount} Bathroom. {listing.balconyCount} Balcony</p>
             <hr />
-            <div className="creator">
+            <div className={styles['creator']}>
                 {creator && creator.profileImagePath ? (
                     <>
                         <img src={`http://localhost:3000/${creator.profileImagePath.replace("public", "")}`} alt="creator" />
@@ -73,13 +107,13 @@ const ListingDetails = () => {
             <hr />
             <h3>{listing.highlight}</h3>
             <p>{listing.highlightDetails}</p>
-            <div className="rent">
+            <div className={styles['rent']}>
                 <div>
                     <h2>What this place offers</h2>
-                    <div className="amenities">
+                    <div className={styles['amenities']}>
                         {listing.amenity?.map((item, index) => (
-                            <div className="amenity" key={index}>
-                                <div className="facility-icon">
+                            <div className={styles['amenity']} key={index}>
+                                <div className={styles['facility-icon']}>
                                     {/* Ensure the facilities and icons are mapped correctly */}
                                 </div>
                                 <p>{item}</p>
@@ -87,22 +121,25 @@ const ListingDetails = () => {
                         ))}
                     </div>
                 </div>
-<Review listingId={listingId} />
-                 <div className="price-calculation">
+                <Review listingId={listingId} />
+                <div className={styles['price-calculation']}>
                     <label>
-                          How Many Months you want to give advance? (atleast one month needed):
+                        How Many Months you want to give advance? (at least one month needed):
                         <input type="number" value={multiplier} onChange={handleMultiplierChange} />
-                     </label>
-                     <p>Price: {listing.price} x {multiplier} = {listing.price * multiplier}</p>
-                 </div>
-                <button className='button' type="submit">
+                    </label>
+                    <p>Price: {listing.price} x {multiplier} = {listing.price * multiplier}</p>
+                </div>
+                <h3>add your national id</h3>
+                <FileUpload onUploadSuccess={handleUploadSuccess} />
+                <button className={styles['button']} type="submit" onClick={handleSubmit}>
                     Rent
                 </button>
                 <p>When you click on the rent your apartment will be confirmed</p>
             </div>
+            <hr />
+           
         </div>
     );
 };
 
 export default ListingDetails;
-
