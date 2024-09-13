@@ -11,11 +11,11 @@ import NationalId from './NationalId';
 const HomePage = () => {
   return (
     <div>
-    {/* <Header/>
+    <Header/>
     
     <Navbar/>
     <Slide />
-    <Categories/> */}
+    <Categories/>
    
    <Header/>
    <NationalId/>

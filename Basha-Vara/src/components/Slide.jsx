@@ -4,7 +4,7 @@ const Slide = () => {
   return (
     <div>
       <div className="slide">
-        <h1>hi </h1>
+        <h1>Click on the category to find your Dream Home: </h1>
         {/* eikhane ekta valo photo add korish
          */}
       </div>

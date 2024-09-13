@@ -1,0 +1,28 @@
+.listings{
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 10px 20px;
+  
+}
+.category{
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 90px;
+    border: 1px solid var(--grey);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+.category-icon{
+    
+        font-size: 30px;
+        color: rgb(102, 7, 7);
+    
+}
