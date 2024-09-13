@@ -3,17 +3,21 @@
 
 /* ListingCard.module.scss */
 .listing-card {
-  height: 100%;
-  width: 20.5%;
-  position: relative;
+  display: flex;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  grid-gap: 20px;
+  
+ 
+  position: relative; 
     
   background-color: rgb(246, 246, 246);
   cursor: pointer;
   
   margin-top: 20px;
   margin-bottom: 20px;
-  margin-left: 20px;
-  margin-right: 20px;
+  margin-left: 50px;
+  margin-right: 50px;
+  
   
   padding: 10px;
   border-radius: 10px;
@@ -31,10 +35,12 @@
 }
 
   .image-slider{
-    width: 300px;
+
+    width: 600px;
     overflow: hidden;
     border-radius: 10px;
     margin-bottom: 10px;
+    margin-right: 100px;
   }
 
   .slider {
@@ -42,7 +48,7 @@
     transition: transform 0.5s ease;
 
     .slide {
-      position: relative;
+      position: grid;
       flex: 0 0 100%;
       width: 100%;
       height: 270px;
@@ -51,6 +57,8 @@
     }
 
     .slide img {
+     
+      object-fit: cover;
       width: 100%;
       height: 100%;
       filter: brightness(85%);
@@ -111,3 +119,6 @@
     background: none;
   }
 
+  .card{
+    background-color: transparent;
+  }

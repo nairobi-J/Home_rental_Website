@@ -46,16 +46,20 @@ const ListingCard = ({
         </div>
       </div>
 
-      <h3>{thana},{city}, {district}</h3>
-      <p>{category}</p>
-      <p>{type}</p>
+    <div  className={`${Styles['card']} container`}> 
+    <h3>Address: {thana},{city}, {district}</h3>
+      <p>Category: {category}</p>
+      <p>Type: {type}</p>
       <p>
-        <span>
-          <FaBangladeshiTakaSign />{price}
+        <span>Rent:
+          <FaBangladeshiTakaSign />{ price}
         </span>
-        Per Month
+         /mo
       </p>
       <button onClick={handleClick}>See details</button>
+    </div>
+     
+      
     </div>
   );
 };

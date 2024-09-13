@@ -4,7 +4,7 @@ import { Category } from '@mui/icons-material';
 import ListingCard from './ListingCard';
 import Loader from './Loader';
 import {setListings} from "../redux/userSlice"
-
+import styles from './Listings.module.css';
 // import { useDispatch } from 'react-redux';
 import { TbBeach, TbMountain, TbPool } from 'react-icons/tb';
 import {GiBarn, GiBoatFishing, GiCactus, GiCastle, GiCaveEntrance, GiForestCamp,GiIsland, GiWindmill, GiHeatHaze, GiCctvCamera, GiBarbecue, GiToaster, GiCampfire} from 'react-icons/gi';import { FaSkiing, FaPumpSoap, FaShower, FaFireExtinguisher, FaUmbrellaBeach, FaKey } 
@@ -58,13 +58,13 @@ const Listings = () => {
       console.log(listings)
   return (
     <>
-     <div className="category-list">
+     <div className={styles['listings']}>
       {
         categories?.map((item, index) => {
            const IconComp = iconMap[item.icon];
            return(
-            <div className="category" key = {index} onClick={()=> setSelectedCategory(item.label)}>
-                <div className="category-icon">
+            <div className={styles['category']} key = {index} onClick={()=> setSelectedCategory(item.label)}>
+                <div className={styles['category-icon']}>
                     {IconComp && <IconComp/>}
                 </div>
                 <p>{item.label}</p>
