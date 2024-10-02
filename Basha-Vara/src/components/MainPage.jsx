@@ -49,7 +49,7 @@ const MainPage = () => {
             <button onClick={() => handleNavigation('/signUp')}>Sign Up</button>
           </>
         ) : (
-          <h1>Welcome, Dear {user.name}!</h1> // Show this if not logged in
+          <h1>Welcome,  {user.name}!</h1> // Show this if not logged in
         )}
       </div>
       <Slide />
