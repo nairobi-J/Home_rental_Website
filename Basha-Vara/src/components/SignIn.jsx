@@ -45,7 +45,7 @@ const SignIn = () => {
         user: loggedIn.user,
         token: loggedIn.token,
       }));
-      navigate('/homePage');
+      navigate('/');
     } catch (err) {
       console.log('Login failed', err.message);
     }

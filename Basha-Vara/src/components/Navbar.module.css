@@ -1,50 +1,7 @@
-/* .navbar{
-    display: flex;
-    gap:15rem;
-    padding-top: 10px;
-    
-    
-}
-.navi{
-    display: flex;
-    flex-direction: row;
-    list-style: none;
-    justify-content: space-around;
-    gap: 3rem;
-}
-li{
-  list-style: none;
 
-}
-nav {
-    justify-content: space-around;
-    align-items:center;
-    height: 10vh;
-
-}
-
-input{
- 
- border:none;
- /* border-radius: 20%; */
-/* height: 45px;
- width: 200px;
-}
-.logo{
-    border-radius: 50%;
-    height: 50px;
-    width: 50px;
-   }
-   img{
-    border-radius: 50%;
-    height: 50px;
-    width: 50px;
-   } */
-
-
-   /* Navbar.module.css */
 
    .navbar {
+   
     width: 100%; /* Make the navbar span the entire width */
     display: flex;
     justify-content: space-between;
@@ -110,7 +67,8 @@ input{
   
   .hostLink {
     text-decoration: none;
-    color: #000;
+    border: #070505;
+    color: rgb(203, 114, 98);
     font-weight: bold;
   }
   
@@ -137,8 +95,9 @@ input{
   }
   
   .dropdownMenu {
+
     position: absolute;
-    top: 60px;
+    top: 100px;
     right: 20px;
     /* padding-right: 55px; */
     background-color: white;
@@ -164,5 +123,8 @@ input{
   .dropdownMenu a:hover {
     
     background-color: #f0f0f0;
+  }
+  .beHost{
+    color: white;
   }
   
