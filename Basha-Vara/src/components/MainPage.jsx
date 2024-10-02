@@ -32,6 +32,7 @@ const MainPage = () => {
           <h1>HOME RENTAL HELP</h1>
         </div>
         <div className={styles.qoute}>
+          
           <AnimatedTextWord text="A Complete solution for Home renting." />
           <AnimatedTextWord text="Where you can find your dream home without even roaming around road." />
           <AnimatedTextWord text="Take a deep breath and dive into the latest helping hand of yours" />
