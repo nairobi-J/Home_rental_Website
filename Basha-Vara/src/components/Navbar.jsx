@@ -39,7 +39,7 @@ const Navbar = () => {
         {user ? (
             <a href="/createList" className={styles.hostLink}>Be the Host</a>
           ) : (
-            <a href="/logIn" className={styles.hostLink}>Become a host</a>
+            <a href="/signin" className={styles.hostLink}>Become a host</a>
           )}
         </div>
        
