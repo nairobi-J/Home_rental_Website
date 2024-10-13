@@ -1,124 +1,106 @@
-/* variables.module.scss */
-
-
-/* ListingCard.module.scss */
-.listing-card {
-  display: flex;
-  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
-  grid-gap: 20px;
-  
+/* For the grid container */
+.grid-container {
  
-  position: relative; 
-    
-  background-color: rgb(246, 246, 246);
-  cursor: pointer;
-  
-  margin-top: 20px;
-  margin-bottom: 20px;
-  margin-left: 50px;
-  margin-right: 50px;
-  
-  
-  padding: 10px;
-  border-radius: 10px;
-
-  box-shadow:10px black;
-
-
-  border-color: rgb(12, 12, 12);
-  
-  
-
-  &:hover {
-    box-shadow: red; 
-  }  
+  gap: 2px;
 }
 
-  .image-slider{
+/* For individual cards */
+.listing-card-container {
+   display: flex;
+   gap: 10px;
+   padding: 10px 10px 10px 10px;
+ 
+}
+.listing-card{
+  width: 100%;
+  
+  display: flex;
+  flex-direction: row;
+  gap:50px;
+  background-color: rgb(253, 245, 245);
+  box-shadow: 0px 2px 8px rgba(124, 44, 44, 0.2);
+ 
+  border:1px solid rgb(0, 0, 0);
+  border-radius: 1%;
+  padding:20px 20px 20px 20px;
+}
 
-    width: 600px;
-    overflow: hidden;
-    border-radius: 10px;
-    margin-bottom: 10px;
-    margin-right: 100px;
-  }
+.image-slider {
+  width: 400px;
+  height: 100%; /* You can adjust this to fit the aspect ratio */
+  overflow: hidden;
+  border-radius: 10px;
+  position: relative;
+}
 
-  .slider {
-    display: flex;
-    transition: transform 0.1s ease;
+.slider {
+  display: flex;
+  transition: transform 0.3s ease-in-out;
+}
 
-    .slide {
-      position: grid;
-      flex: 0 0 100%;
-      width: 100%;
-      height: 270px;
-      display: flex;
-      align-items: center;
-    }
+.slide {
+  flex: 0 0 100%;
+}
 
-    .slide img {
-     
-      object-fit: cover;
-      width: 100%;
-      height: 100%;
-      filter: brightness(85%);
-    }
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
-    .slide .prev-button,
-    .slide .next-button {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      height: 10px;
-      padding: 6px;
-      border-radius: 10%;
-      border: none;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background-color: rgba(255, 255, 255, 0.7);
-      z-index: 9999;
-    }
-
-    .slide .prev-button:hover,
-    .slide .next-button:hover {
-      background-color: white;
-    }
-
-    .slide .prev-button {
-      left: 10px;
-    }
-
-    .slide .next-button {
-      right: 10px;
-    }
-  }
-
-  h3 {
-    font-size: 18px;
-  }
-
-  p {
-    font-size: 16px;
-  }
-
-  span {
-    font-weight: 700;
-    font-size: 18px;
-  }
-
-  .favorite {
-    position: absolute;
-    right: 20px;
-    top: 20px;
-    border: none;
-    font-size: 20px;
-    cursor: pointer;
-    z-index: 999;
-    background: none;
-  }
-
-  .card{
+.prev-button,
+.next-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgb(183, 176, 176);
+  border: none;
+  padding: 6px;
+  border-radius: 30%;
+  cursor: pointer;
+  z-index: 1;
+  &:hover{
     background-color: transparent;
   }
+}
+
+.prev-button {
+  left: 10px;
+}
+
+.next-button {
+  right: 10px;
+}
+
+.card {
+  padding: 10px;
+}
+
+h3 {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+p {
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+
+span {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+button {
+  margin-top: 10px;
+  background-color: #ff5a5f;
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #e04e4e;
+}

@@ -14,15 +14,22 @@
     justify-content: center;
     align-items: center;
     width: 100px;
-    height: 90px;
-    border: 1px solid var(--grey);
+    height: 100px;
+    border: 2px solid var(--grey);
     border-radius: 10px;
     cursor: pointer;
-    transition: 0.3s ease;
+    transition: 0.4s ease;
+    &:hover {
+      color:rgb(120, 115, 115);
+  }
+    
 }
 .category-icon{
     
         font-size: 30px;
         color: rgb(102, 7, 7);
+        &:hover {
+          color:rgb(120, 115, 115);
+      }
     
 }
