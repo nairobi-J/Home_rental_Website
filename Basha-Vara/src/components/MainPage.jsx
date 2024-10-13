@@ -41,7 +41,7 @@ const MainPage = () => {
           <p> </p>
         </div>
 
-        {isLoggedIn && user.name ? (
+        {!isLoggedIn ? (
           <>
             {/* Show this if logged in */}
             <button onClick={() => handleNavigation('/signIn')}>Sign In</button>

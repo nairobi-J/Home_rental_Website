@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { ArrowBackIosNew, ArrowForwardIos } from '@mui/icons-material';
 import Styles from './ListingCard.module.css';
 import { FaBangladeshiTakaSign } from 'react-icons/fa6';
+import { useNavigate } from 'react-router';
 
 const ListingCard = ({
   listingId,
@@ -14,11 +15,16 @@ const ListingCard = ({
   type,
   price
 }) => {
+  const navigate = useNavigate();
   const handleClick = () => {
     window.location.href = `/listings/${listingId}`;
   };
+  const handleClick1 = () => {
+    navigate('/signin')
+  };
 
   const [currentIndex, setCurrentIndex] = useState(0);
+  const isLoggedIn = !!localStorage.getItem('token');
 
   const goToPrevSlide = () => {
     setCurrentIndex((prevIndex) => (prevIndex - 1 + listingPhotoPaths.length) % listingPhotoPaths.length);
@@ -60,7 +66,11 @@ const ListingCard = ({
             </span>{' '}
             /mo
           </p>
+          {isLoggedIn?(
           <button onClick={handleClick}>See details</button>
+          ):(<button onClick={handleClick1}>Log In To see details</button>)
+          }
+          
         </div>
       </div>
     </div>
