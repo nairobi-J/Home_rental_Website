@@ -7,20 +7,20 @@ export const categories = [
   },
   {
     //img: "assets/beach_cat.jpg",
-    label: "Beachfront",
-    icon: "TbBeach",
-    description: "This property is close to the beach!",
+    label: "By School",
+    icon: "FaSchool",
+    description: "This property is close to the School",
   },
   {
     //img: "assets/windmill_cat.webp",
-    label: "Windmills",
-    icon: "GiWindmill",
-    description: "This property has windmills!",
+    label: "Hospital",
+    icon: "FaHospital",
+    description: "This property has Hospital!",
   },
   {
     //img: "assets/modern_cat.webp",
-    label: "Iconic cities",
-    icon: "MdOutlineVilla",
+    label: "Road-Side",
+    icon: "FaRoad",
     description: "This property is modern!",
   },
   {
@@ -31,26 +31,26 @@ export const categories = [
   },
   {
    // img: "assets/pool_cat.jpg",
-    label: "Amazing Pools",
-    icon: "TbPool",
-    description: "This property has a beautiful pool!",
+    label: "City",
+    icon: "FaCity",
+    description: "This property is in city",
   },
   {
     //img: "assets/island_cat.webp",
-    label: "Islands",
-    icon:"GiIsland",
+    label: "Bazar",
+    icon:"FaShop",
     description: "This property is on an island!",
   },
   {
     //img: "assets/lake_cat.webp",
-    label: "Lakefront",
-    icon: "GiBoatFishing",
+    label: "PlayGround",
+    icon: "FaChild",
     description: "This property is near a lake!",
   },
   {
    // img: "assets/skiing_cat.jpg",
-    label: "Ski-in/out",
-    icon: "FaSkiing",
+    label: "Mosque",
+    icon: "FaMosque",
     description: "This property has skiing activities!",
   },
   {
@@ -59,12 +59,7 @@ export const categories = [
     icon: "GiCastle",
     description: "This property is an ancient castle!",
   },
-  {
-    //img: "assets/cave_cat.jpg",
-    label: "Caves",
-    icon: "GiCaveEntrance",
-    description: "This property is in a spooky cave!",
-  },
+
   {
     //img: "assets/camping_cat.jpg",
     label: "Camping",
@@ -72,28 +67,24 @@ export const categories = [
     description: "This property offers camping activities!",
   },
   {
-    //img: "assets/arctic_cat.webp",
-    label: "Arctic",
-    icon:  "BsSnow",
-    
-    description: "This property is in an arctic environment!",
+    //img: "assets/camping_cat.jpg",
+    label: "Many Tress",
+    icon: "FaTree",
+    description: "This property offers camping activities!",
   },
-  {
-    //img: "assets/desert_cat.webp",
-    label: "Desert",
-    icon: "GiCactus",
-    description: "This property is in the desert!",
-  },
-  {
-   // img: "assets/barn_cat.jpg",
-    label: "Barns",
-    icon: "GiBarn",
-    description: "This property is in a barn!",
-  },
+
+
+
   {
     //img: "assets/lux_cat.jpg",
     label: "Luxury",
     icon: "IoDiamond",
+    description: "This property is brand new and luxurious!",
+  },
+  {
+    //img: "assets/lux_cat.jpg",
+    label: "Calm",
+    icon: "FaLeaf",
     description: "This property is brand new and luxurious!",
   },
 ];

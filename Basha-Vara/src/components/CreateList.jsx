@@ -23,6 +23,7 @@ import { TbIroning3 } from 'react-icons/tb';
 import { AiFillCar } from 'react-icons/ai';
 import {IoIosImages} from 'react-icons/io'
 import { useSelector } from 'react-redux';
+
 const iconMap = {
   TbBeach, TbMountain, TbPool, GiBarn, GiBoatFishing, GiCactus, GiCastle,
   GiCaveEntrance, GiForestCamp, GiIsland, GiWindmill, FaSkiing, FaPumpSoap,
@@ -33,8 +34,9 @@ const iconMap = {
   GiHeatHaze, GiCctvCamera, GiBarbecue, GiToaster, GiCampfire, AiFillCar, IoDiamond
 };
 
-const CreateList = () => {
 
+const CreateList = () => {
+  
 
   const [category, setCategory] = useState("");
   const [type, setType] = useState("");
@@ -144,6 +146,9 @@ const CreateList = () => {
           [name]: value
       });
   };
+  const handleClick = (e) => {
+    navigate('/mainPage')
+  }
  
 //  console.log(amenity);
 //  console.log(formDescription)
@@ -461,7 +466,9 @@ const CreateList = () => {
               />
                </div>
           </div>
-          <button className='submit' type = "submit">Create Your List</button>
+          <button className='submit' type='button' onClick={handleClick}>
+      Create Your List
+    </button>
         </form>
       </div>
 

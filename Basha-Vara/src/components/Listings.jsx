@@ -6,25 +6,19 @@ import Loader from './Loader';
 import {setListings} from "../redux/userSlice"
 import styles from './Listings.module.css';
 // import { useDispatch } from 'react-redux';
-import { TbBeach, TbMountain, TbPool } from 'react-icons/tb';
-import {GiBarn, GiBoatFishing, GiCactus, GiCastle, GiCaveEntrance, GiForestCamp,GiIsland, GiWindmill, GiHeatHaze, GiCctvCamera, GiBarbecue, GiToaster, GiCampfire} from 'react-icons/gi';import { FaSkiing, FaPumpSoap, FaShower, FaFireExtinguisher, FaUmbrellaBeach, FaKey } 
-from 'react-icons/fa';import { FaHouseUser, FaPeopleRoof, FaKitchenSet,FaBangladeshiTakaSign } from 'react-icons/fa6';import { BiSolidWasher, BiSolidDryer, BiSolidFirstAid, BiWifi, BiSolidFridge, BiWorld, BiTrash} from 'react-icons/bi';
-import { BsSnow, BsFillDoorOpenFill, BsPersonWorkspace } from 'react-icons/bs';
+import {  TbMountain } from 'react-icons/tb';
+import { GiForestCamp,GiCampfire} from 'react-icons/gi';import {  FaSchool, FaHospital, FaRoad, FaCity, FaShop, FaChild, FaMosque, FaTree, FaPeace, FaLeaf } from 'react-icons/fa6';
+import {  BiWorld} from 'react-icons/bi';
+
 import { IoDiamond } from 'react-icons/io5';
-import { MdOutlineVilla, MdMicrowave, MdBalcony, MdYard, MdPets } from 'react-icons/md';
-import { PiBathtubFill, PiCoatHangerFill, PiTelevisionFill } from 'react-icons/pi';
-import { TbIroning3 } from 'react-icons/tb';
-import { AiFillCar } from 'react-icons/ai';
-import {IoIosImages} from 'react-icons/io'
+
 import { useDispatch, useSelector } from 'react-redux';
 const iconMap = {
-  TbBeach, TbMountain, TbPool, GiBarn, GiBoatFishing, GiCactus, GiCastle,
-  GiCaveEntrance, GiForestCamp, GiIsland, GiWindmill, FaSkiing, FaPumpSoap,
-  FaShower, FaFireExtinguisher, FaUmbrellaBeach, FaKey, FaHouseUser, FaPeopleRoof,
-  FaKitchenSet, BiSolidWasher, BiSolidDryer, BiSolidFirstAid, BiWifi, BiSolidFridge,
-  BiWorld, BsSnow, BsFillDoorOpenFill, BsPersonWorkspace, MdOutlineVilla, MdMicrowave,
-  MdBalcony, MdYard, MdPets, PiBathtubFill, PiCoatHangerFill, PiTelevisionFill, TbIroning3,
-  GiHeatHaze, GiCctvCamera, GiBarbecue, GiToaster, GiCampfire, AiFillCar, IoDiamond
+ TbMountain, 
+  GiForestCamp, 
+  BiWorld,
+ 
+ GiCampfire,  IoDiamond, FaSchool, FaHospital, FaRoad, FaCity, FaShop, FaChild, FaMosque, FaTree, FaLeaf
 };
 const Listings = () => {
 
