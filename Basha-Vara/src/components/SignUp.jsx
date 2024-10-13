@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Navbar from './Navbar'
 import styles from './SignUp.module.css';
 const SignUp = () => {
+  
     const [formData, setFormData] = useState({
         name: "",
         email: "",
@@ -53,7 +54,9 @@ const SignUp = () => {
             console.log("Registration failed:", err.message);
         }
     }
-    
+    const handleClick = (e)=>{
+        navigate('/signIn')
+    }
 
     return (
         <div className="register">
@@ -150,6 +153,9 @@ const SignUp = () => {
                  
                     <button type="submit" disabled={!passwordMatch}>Register</button>
                 </form>
+                <p>Already Registred?
+                    <button onClick={handleClick}>Sign In</button>
+                </p>
             </div>
         </div>
     );
