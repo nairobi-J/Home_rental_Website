@@ -136,7 +136,8 @@ const SignUp = () => {
                         value={formData.address}
                         onChange={handleChange}
                         required
-                    /> */}
+                    /> */
+                    }
                     <div className={styles.formGroup}>
                     <label className={styles.label}>Upload Image:</label>
                     <input

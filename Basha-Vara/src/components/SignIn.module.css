@@ -1,90 +1,83 @@
-/* .signIn{
-    padding-top: 150px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 50px;
-    gap:20px;
-} */
-
-/* Basic Styles for the Page */
-body {
-    font-family: Arial, sans-serif;
-}
-
-/* Navbar Styles */
-.navbar {
-    background-color: #333; /* Dark background */
-    padding: 15px; /* Padding for spacing */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: white; /* White text for contrast */
-    width: 100%; /* Full width */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    position: fixed;
-    top: 0;
-    z-index: 1000;
-}
-
-/* Container for main content */
-.container {
-    margin-top: 100px; /* Space for navbar */
-    padding: 20px; /* Padding for spacing */
+.login {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh; /* Full viewport height */
-    background-color: #f9f9f9; /* Light background */
+    height: 100vh;
 }
 
-/* Sign-in form container */
-.signIn {
-    padding: 40px;
+
+.signInContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
-    background-color: white; /* White background for form */
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+    padding: 50px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+    background-color: #fdfdfd;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 400px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Styles for input fields */
-.signIn input {
-    width: 300px; /* Consistent width */
-    padding: 10px; /* Padding for spacing */
-    margin-bottom: 20px; /* Space between inputs */
-    border: 1px solid #ccc; /* Light border */
-    border-radius: 5px; /* Rounded corners */
-    font-size: 16px; /* Font size for readability */
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    /* gap: 100px; */
 }
 
-/* Styles for login button */
-.signIn button {
-    width: 100%; /* Full width button */
-    padding: 10px; /* Padding for spacing */
-    background-color: #333; /* Dark background */
-    color: white; /* White text */
-    border: none; /* No border */
-    border-radius: 5px; /* Rounded corners */
-    cursor: pointer; /* Pointer cursor on hover */
-    font-size: 18px; /* Larger font for emphasis */
-    transition: background-color 0.3s; /* Smooth background color transition */
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }
 
-/* Hover effect for button */
-.signIn button:hover {
-    background-color: #555; /* Slightly lighter on hover */
+.label {
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
 }
 
-/* Adjust the spacing between navbar and form on small screens */
-@media (max-width: 600px) {
-    .container {
-        margin-top: 80px; /* Adjust margin for smaller screens */
-    }
-    .signIn {
-        width: 90%; /* Full width on small screens */
-        padding: 20px; /* Less padding for smaller screens */
-    }
+.errorMessage {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.button {
+    background-color: #5d3a3a;
+    color: #fff;
+   
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button:disabled {
+    background-color: #999;
+}
+
+.button:hover:not(:disabled) {
+  background-color: #3a2424;
+}
+
+.footer {
+    margin-top: 200px;
+    text-align: center;
+}
+
+.linkButton {
+    background: none;
+    border: none;
+    color: #5d3a3a;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.linkButton:hover {
+    color: #3a2424;
 }
