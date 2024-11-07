@@ -1,0 +1,2 @@
+1. registration page e alert message add kra if any issues occur
+2. new listing add kora jacchena
