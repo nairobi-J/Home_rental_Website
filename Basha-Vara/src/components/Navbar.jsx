@@ -9,6 +9,7 @@ import styles from './Navbar.module.css';
 import { useSelector, useDispatch } from 'react-redux';
 import { setLogOut } from '../redux/userSlice';
 import { Link } from 'react-router-dom';
+import SearchBar from './SearchBar';
 
 const Navbar = () => {
   const [dropdownMenu, setDropdownMenu] = useState(false);
@@ -23,18 +24,10 @@ const Navbar = () => {
           <a href="/">
             <img src="images/Logo.jpg" alt="Logo" />
           </a>
+          {/* <SearchBar/> */}
         </div>
-
-        <div className={styles.searchContainer}>
-          <input
-            type="text"
-            placeholder="Search..."
-            className={styles.searchInput}
-          />
-          <IconButton className={styles.searchButton}>
-            <Search />
-          </IconButton>
-        </div>
+          
+     
         <div className="beHost">
         {user ? (
             <a href="/createList" className={styles.hostLink}>Be the Host</a>
@@ -76,6 +69,7 @@ const Navbar = () => {
             </div>
           )}
         </div>
+        
       </div>
     </>
   );

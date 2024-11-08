@@ -41,16 +41,17 @@ const MainPage = () => {
           <p> </p>
         </div>
 
-        {!isLoggedIn ? (
-          <>
-            {/* Show this if logged in */}
-            <button onClick={() => handleNavigation('/signIn')}>Sign In</button>
-            <p>Or</p>
-            <button onClick={() => handleNavigation('/signUp')}>Sign Up</button>
-          </>
-        ) : (
-          <h1>Welcome,  {user.name}!</h1> // Show this if not logged in
-        )}
+        {user ? (
+  <h1>Welcome, {user.name}!</h1> // Show this if logged in
+) : (
+  <>
+    {/* Show this if not logged in */}
+    <button onClick={() => handleNavigation('/signIn')}>Sign In</button>
+    <p>Or</p>
+    <button onClick={() => handleNavigation('/signUp')}>Sign Up</button>
+  </>
+)}
+
       </div>
       <Slide />
       <Listings />

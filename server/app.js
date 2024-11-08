@@ -20,6 +20,7 @@ app.use('/auth',authRoutes);
 app.use('/listings',listingRoutes);
 app.use('/reviews', reviewRoutes);
 app.use('/rent', rentRoutes)
+
 const PORT = 3000 || 4000;
 mongoose.connect(process.env.DBURL, {
     dbName: "dream-home",
