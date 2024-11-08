@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Navbar from './Navbar';
 import {useState} from 'react'
@@ -23,8 +24,8 @@ import { TbIroning3 } from 'react-icons/tb';
 import { AiFillCar } from 'react-icons/ai';
 import {IoIosImages} from 'react-icons/io'
 import { useSelector } from 'react-redux';
-
 const iconMap = {
+  TbBeach, TbMountain, TbPool, GiBarn, GiBoatFishing, GiCactus, GiCastle,
   GiCaveEntrance, GiForestCamp, GiIsland, GiWindmill, FaSkiing, FaPumpSoap,
   FaShower, FaFireExtinguisher, FaUmbrellaBeach, FaKey, FaHouseUser, FaPeopleRoof,
   FaKitchenSet, BiSolidWasher, BiSolidDryer, BiSolidFirstAid, BiWifi, BiSolidFridge,
@@ -33,9 +34,8 @@ const iconMap = {
   GiHeatHaze, GiCctvCamera, GiBarbecue, GiToaster, GiCampfire, AiFillCar, IoDiamond
 };
 
-
 const CreateList = () => {
-  
+
 
   const [category, setCategory] = useState("");
   const [type, setType] = useState("");
@@ -96,7 +96,7 @@ const CreateList = () => {
           });
 
           if (response.ok) {
-              navigate('/homepage');
+              navigate('/');
           }
       } catch (err) {
           console.log("Publishing listing failed", err.message);
@@ -145,9 +145,6 @@ const CreateList = () => {
           [name]: value
       });
   };
-  const handleClick = (e) => {
-    navigate('/mainPage')
-  }
  
 //  console.log(amenity);
 //  console.log(formDescription)
@@ -465,9 +462,7 @@ const CreateList = () => {
               />
                </div>
           </div>
-          <button className='submit' type='button' onClick={handleClick}>
-      Create Your List
-    </button>
+          <button className='submit' type = "submit">Create Your List</button>
         </form>
       </div>
 
