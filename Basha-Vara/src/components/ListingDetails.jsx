@@ -11,6 +11,7 @@ const ListingDetails = () => {
     const [listing, setListing] = useState(null);
     const [multiplier, setMultiplier] = useState(1);
     const [nationalIdPhotoPaths, setNationalIdPhotoPaths] = useState([]);
+    const user = useSelector((state) => state.user);
     
     const { listingId } = useParams();
     const navigate = useNavigate();

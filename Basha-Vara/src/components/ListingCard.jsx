@@ -3,6 +3,7 @@ import { ArrowBackIosNew, ArrowForwardIos } from '@mui/icons-material';
 import Styles from './ListingCard.module.css';
 import { FaBangladeshiTakaSign } from 'react-icons/fa6';
 import { useNavigate } from 'react-router';
+import { useSelector } from 'react-redux';
 
 const ListingCard = ({
   listingId,
@@ -33,6 +34,7 @@ const ListingCard = ({
   const goToNextSlide = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % listingPhotoPaths.length);
   };
+  const user = useSelector((state) => state.user);
 
   return (
     <div className={Styles['listing-card-container']}>
@@ -66,7 +68,7 @@ const ListingCard = ({
             </span>{' '}
             /mo
           </p>
-          {isLoggedIn?(
+          {user?(
           <button onClick={handleClick}>See details</button>
           ):(<button onClick={handleClick1}>Log In To see details</button>)
           }
