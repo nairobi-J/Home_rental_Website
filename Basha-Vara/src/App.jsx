@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import './App.css';
 import MainPage from './components/MainPage';
 import SignUp from './components/SignUp';
@@ -17,12 +17,15 @@ import CreateList from './components/CreateList';
 import ListingDetails from './components/ListingDetails';
 import Listings from './components/Listings';
 
-function App() {
-  return (
-    <div>
-      <BrowserRouter>
-        <Navbar />
-        <Routes>
+function AppContent(){
+
+  const location = useLocation();
+  const hideNavbarPaths = ['/signUp', '/signIn', '/about'];
+
+  return(
+    <>
+     {!hideNavbarPaths.includes(location.pathname) && <Navbar />}
+      <Routes>
           <Route index element={<MainPage />} />
           <Route path='/' element={<MainPage />} />
           <Route path='/signUp' element={<SignUp />} />
@@ -41,6 +44,18 @@ function App() {
          
         
         </Routes>
+
+    </>
+  );
+
+}
+
+function App() {
+
+  return (
+    <div>
+      <BrowserRouter>
+      <AppContent/>
       </BrowserRouter>
     </div>
   );

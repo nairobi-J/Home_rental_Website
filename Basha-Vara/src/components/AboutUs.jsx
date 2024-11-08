@@ -7,7 +7,6 @@ import Navbar from './Navbar';
 const AboutUs = () => {
     return (
         <div>
-            <Navbar/>
         <div className={styles.wrapper}>
           
            
@@ -86,7 +85,7 @@ const AboutUs = () => {
                 </section>
                 
                 <footer className={styles.footer}>
-                    <p>Ready to find your next home? <a href="/homePage">Browse our listings</a> or contact us today!</p>
+                    <p>Ready to find your next home? <a href="/">Browse our listings</a> or contact us today!</p>
                 </footer>
             </div>
         </div>

@@ -6,15 +6,15 @@
   color: white;
   
   /* Background Image */
-  background-image: url('../images/mainpage-bg2.jpg'); /* Adjust the path as needed */
+  background-image: url('../images/mainpage-bg2.jpg'); 
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   height: 100vh;
-  position: relative; /* Required for overlay positioning */
-  z-index: 1; /* Ensure stacking context for overlay */
+  position: relative; 
+  z-index: 1; 
 
-  /* Add a dark overlay */
+  
   &::before {
     content: '';
     position: absolute;
@@ -28,6 +28,7 @@
 }
   .mainPage div{
     display: flex;
+    
     
   
   }

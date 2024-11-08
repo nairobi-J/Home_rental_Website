@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from "react-router-dom";
-import Navbar from './Navbar'
 import styles from './SignUp.module.css';
 const SignUp = () => {
   
@@ -59,14 +58,15 @@ const SignUp = () => {
     }
 
     return (
-        <div className="register">
-       <Navbar/>
-            <div className={`${styles.signUp} container`}>
+        <div className={styles.register}>
+       
+            <div className={styles.signUpContainer}>
              
-                <form className={`${styles.signUp} container`} onSubmit={handleSubmit}>
-                  <div className="name">
-                   Name  :
+                <form className={styles.form} onSubmit={handleSubmit}>
+                  <div className={styles.formGroup}>
+                  <label className={styles.label}>Name: </label>
                   <input
+                        className={styles.input}
                   
                         placeholder='Name'
                         name="name"
@@ -77,9 +77,10 @@ const SignUp = () => {
                     />
                   </div>
 
-                  <div className="email">
-                    Email  : 
+                  <div className={styles.formGroup}>
+                  <label className={styles.label}>Email: </label>
                   <input
+                        className={styles.input}
                         placeholder='Email'
                         name="email"
                         type="email"
@@ -89,9 +90,10 @@ const SignUp = () => {
                     />
                   </div>
                   
-                  <div className="password">
-                    Password :
+                  <div className={styles.formGroup}>
+                  <label className={styles.label}>Password: </label>
                   <input
+                        className={styles.input}
                         placeholder='Password'
                         name="password"
                         type='password'
@@ -100,9 +102,10 @@ const SignUp = () => {
                         required
                     />
                   </div>
-                  <div className="confirmPassword">
-                    Confirm Password  :
+                  <div className={styles.formGroup}>
+                  <label className={styles.label}>Confirm Password:</label>
                   <input
+                         className={styles.input}
                         placeholder='Confirm Password'
                         name="confirmPassword"
                         type='password'
@@ -113,9 +116,10 @@ const SignUp = () => {
                     {!passwordMatch && <p>Password not matched</p>}
                   </div>
                  
-                   <div className="contact">
-                   Contact  :
+                   <div className={styles.formGroup}>
+                   <label className={styles.label}>Contact:</label>
                    <input
+                         className={styles.input}
                         placeholder='Contact'
                         name="contact"
                         type='text'
@@ -132,10 +136,12 @@ const SignUp = () => {
                         value={formData.address}
                         onChange={handleChange}
                         required
-                    /> */}
-                    <div className="pimage">
-                      Upload Image :
+                    /> */
+                    }
+                    <div className={styles.formGroup}>
+                    <label className={styles.label}>Upload Image:</label>
                     <input
+                         className={styles.input}
                         type='file'
                         name='profileImage'
                         accept='image/*'
@@ -147,15 +153,20 @@ const SignUp = () => {
                             src={URL.createObjectURL(formData.profileImage)}
                             alt="Profile"
                             style={{ maxWidth: "80px" }}
+                            className={styles.previewImage}
                         />
                     )}
                     </div>
                  
-                    <button type="submit" disabled={!passwordMatch}>Register</button>
+                    <button type="submit" className={styles.button} disabled={!passwordMatch}>Register</button>
                 </form>
-                <p>Already Registred?
-                    <button onClick={handleClick}>Sign In</button>
+
+                <div className={styles.footer}>
+                <p>Already Registred? <t/>
+                    <button onClick={handleClick } className={styles.linkButton}>Sign In</button>
                 </p>
+                <button onClick={() => navigate('/')} className={styles.button}>Back</button>
+                </div>
             </div>
         </div>
     );
