@@ -29,8 +29,13 @@ router.post('/register', upload.single('profileImage'), async (req, res) => {
     const profileImagePath = profileImage.path;
 
     const existingUser = await User.findOne({ email });
+    const sameName = await User.findOne({ name });
+
     if (existingUser) {
       return res.status(409).json({ message: 'User already exists' });
+    }
+    if (sameName) {
+  return res.status(409).json({ message: 'Name already taken' });
     }
 
     const salt = await bcrypt.genSalt();
@@ -75,5 +80,32 @@ router.post('/login', async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 });
+router.post('/check-availability', async (req, res) => {
+  try {
+    const { email, name, contact } = req.body;
+
+    const emailExists = await User.findOne({ email });
+    const nameExists = await User.findOne({ name });
+    const phnExists = await User.findOne({ contact });
+
+    if (emailExists) {
+      return res.status(409).json({ message: 'Email already registered' });
+    }
+
+    if (nameExists) {
+      return res.status(409).json({ message: 'Name already taken' });
+    }
+
+    if (phnExists) {
+      return res.status(409).json({ message: 'Contact already registered' });
+    }
+
+    res.status(200).json({ message: 'Available' });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ message: 'Error checking availability', error: err.message });
+  }
+});
+
 
 export default router;
