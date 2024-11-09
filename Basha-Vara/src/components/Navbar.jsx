@@ -24,9 +24,19 @@ const Navbar = () => {
           <a href="/">
             <img src="images/Logo.jpg" alt="Logo" />
           </a>
-          {/* <SearchBar/> */}
+         
         </div>
-          
+        <div className={styles.searchContainer}>
+         <input
+            type="text"
+            placeholder="Search..."
+            className={styles.searchInput}
+           />
+         
+          <IconButton className={styles.searchButton}>
+            <Search />
+          </IconButton>
+        </div>
      
         <div className="beHost">
         {user ? (
