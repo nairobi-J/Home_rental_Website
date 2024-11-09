@@ -16,6 +16,7 @@ import WishList from './components/WishList';
 import CreateList from './components/CreateList';
 import ListingDetails from './components/ListingDetails';
 import Listings from './components/Listings';
+import SearchBar from './components/SearchBar';
 
 function AppContent(){
 
@@ -41,6 +42,7 @@ function AppContent(){
           <Route path='/createList' element={<CreateList />} />
           <Route path='/listings/:listingId' element={<ListingDetails />} />
           <Route path='/listings' element={<Listings />} />
+          <Route path='/listings/search/:search' element={<SearchBar />} />
          
         
         </Routes>

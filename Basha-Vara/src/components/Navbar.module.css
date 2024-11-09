@@ -22,38 +22,41 @@
   }
   
   .logo img {
+    margin-left: 15px;
     height: 50px;
     width: 50px;
     border-radius: 50%;
   }
   
-  .searchContainer {
-    display: flex;
-    align-items: center;
-    flex: 1;
-    justify-content: center;
-    position: relative;
-  }
+ .searchContainer {
+      display: flex;
+      align-items: center;
+      flex: 1;
+      justify-content: center;
+      position: relative;
+    }
   
-  .searchInput {
-    height: 40px;
-    width: 300px;
-    padding: 0 10px;
-    border: 1px solid #ccc;
-    border-radius: 20px;
-    outline: none;
-    font-size: 16px;
-  }
+    .searchInput {
+      height: 40px;
+      width: 300px;
+      padding: 0 10px;
+      border: 1px solid #ccc;
+      border-radius: 20px;
+      outline: none;
+      font-size: 16px;
+      background: none;
+    }
   
-  .searchButton {
-    background-color: none;
-    border-radius: 50%;
-    padding: 0px;
-    position: absolute;
-    right: 10px;
-    margin-right: auto;
-  }
+    .searchButton {
+      background-color: none;
+      border-radius: 50%;
+      padding: 0px;
+      position: absolute;
+      right: 10px;
+      margin-right: auto;
+    } 
   
+     
   .navbarRight {
     display: flex;
     align-items: center;

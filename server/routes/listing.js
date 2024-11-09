@@ -94,7 +94,7 @@ router.post('/create', upload.array("listingPhotos"), async (req, res) => {
     }
 });
 
-// GET endpoint to fetch listings
+// GET endpoint to fetch listings by category
 router.get('/', async (req, res) => {
     const qCategory = req.query.category;
     try {
@@ -110,6 +110,34 @@ router.get('/', async (req, res) => {
         res.status(500).json({ message: "Failed to fetch listings", error: err.message });
     }
 });
+
+// get listing by search
+router.get("/search/:search", async(req, res) => {
+    const {search} = req.params 
+
+    try{
+
+        let listings = [] //if you type irrelevant search 
+        if(search === 'all')
+        {
+            listings = await listing.find().populate("creator")
+        } else{
+            listings = await listing.find({
+                $or: [
+                    { category: {$regex: search, $options: "i"}},
+                    { title: {$regex: search, $options: "i"}},
+
+                ]
+            }).populate("creator")
+        }
+
+        res.status(200).json(listings)
+    }catch (err) {
+
+        res.status(404).json({message: "fail to fetch listings", error: err.message})
+        console.log(err);
+    }
+})
 
 // GET endpoint to fetch a specific listing by ID
 router.get('/:listingId', async(req, res) => {

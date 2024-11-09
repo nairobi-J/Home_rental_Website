@@ -8,13 +8,15 @@ import { Search, Menu, Person } from '@mui/icons-material';
 import styles from './Navbar.module.css';
 import { useSelector, useDispatch } from 'react-redux';
 import { setLogOut } from '../redux/userSlice';
-import { Link } from 'react-router-dom';
-import SearchBar from './SearchBar';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
   const [dropdownMenu, setDropdownMenu] = useState(false);
   const user = useSelector((state) => state.user);
   const dispatch = useDispatch();
+
+  const [search, setSearch] = useState("");
+  const navigate = useNavigate();
 
   return (
     <>
@@ -31,11 +33,16 @@ const Navbar = () => {
             type="text"
             placeholder="Search..."
             className={styles.searchInput}
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
            />
-         
-          <IconButton className={styles.searchButton}>
-            <Search />
-          </IconButton>
+           <IconButton disable = {search === ""}>
+            <Search
+            onClick = {() => {
+              navigate(`/listings/search/${search}`)
+            }}
+            />
+           </IconButton>
         </div>
      
         <div className="beHost">
