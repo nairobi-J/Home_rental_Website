@@ -17,7 +17,7 @@ const SearchBar = () => {
     const getSearchListings = async () => {
         try{
             const response = await fetch(`http://localhost:5173/listings/search/${search}`, {
-                methos: "GET"
+                method: "GET"
             })
 
             const data = await response.json();
@@ -66,7 +66,7 @@ const SearchBar = () => {
           )
         )}
       </div>
-      <Footer />
+    
     </>
   )
 }

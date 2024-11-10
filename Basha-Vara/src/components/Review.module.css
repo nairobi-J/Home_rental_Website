@@ -6,6 +6,7 @@
     display: flex;
     flex-direction: column;
     margin-bottom: 20px;
+    padding-left: 30px;
 }
 
 .reviewForm label {
@@ -21,7 +22,7 @@
 
 .reviewForm button {
     padding: 10px;
-    background-color: #4caf50;
+    background-color: rgb(118, 85, 85);
     color: white;
     border: none;
     cursor: pointer;
@@ -40,5 +41,16 @@
 button{
     width: 80px;
     justify-content: center;
+    
 
+}
+
+.starRating {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+}
+
+.starRating svg {
+    transition: color 0.2s;
 }

@@ -11,9 +11,7 @@
 
 //   useEffect(() => {
 //     fetchReviews();
-//     // Assuming the userId is stored in local storage or some state management
 //     const storedUserId = localStorage.getItem('userId');
-//     console.log('Retrieved userId from localStorage:', storedUserId);
 //     setUserId(storedUserId);
 //   }, []);
 
@@ -32,7 +30,6 @@
 
 //   const handleReviewSubmit = async (event) => {
 //     event.preventDefault();
-//     console.log('Submitting review:', { listingId, userId, rating, comment });
 //     try {
 //       const response = await fetch('http://localhost:3000/reviews', {
 //         method: 'POST',
@@ -62,6 +59,7 @@
 //       <form onSubmit={handleReviewSubmit} className={styles.reviewForm}>
 //         <label>
 //           Rating:
+//           <div></div>
 //           <input
 //             type="number"
 //             value={rating}
@@ -73,6 +71,7 @@
 //         </label>
 //         <label>
 //           Comment:
+//           <div></div>
 //           <textarea
 //             value={comment}
 //             onChange={(e) => setComment(e.target.value)}
@@ -84,8 +83,11 @@
 //       <div className={styles.reviewList}>
 //         {reviews.map((review, index) => (
 //           <div key={index} className={styles.review}>
-//             <h3>Rating: {review.rating}</h3>
-//             <p>{review.comment}</p>
+//             {review.userId && <h3>{review.userId.name}: </h3>}
+            
+//             <h4>Rating: {review.rating}</h4>
+//             <p>Comment: {review.comment}</p>
+//             {/* {review.userId && <p>Submitted by: {review.userId.name}</p>} */}
 //           </div>
 //         ))}
 //       </div>
@@ -93,19 +95,22 @@
 //   );
 // };
 
+
 // export default Review;
 
 
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { FaStar } from 'react-icons/fa'; 
 import styles from './Review.module.css';
 
 const Review = ({ listingId }) => {
   const navigate = useNavigate();
   const [reviews, setReviews] = useState([]);
-  const [rating, setRating] = useState('');
+  const [rating, setRating] = useState(0);
+  const [hoverRating, setHoverRating] = useState(0); 
   const [comment, setComment] = useState('');
-  const [userId, setUserId] = useState(''); // Placeholder for the actual userId
+  const [userId, setUserId] = useState('');
 
   useEffect(() => {
     fetchReviews();
@@ -144,7 +149,7 @@ const Review = ({ listingId }) => {
 
       const newReview = await response.json();
       setReviews((prevReviews) => [...prevReviews, newReview]);
-      setRating('');
+      setRating(0);
       setComment('');
     } catch (err) {
       console.log('Failed to submit review', err.message);
@@ -157,17 +162,26 @@ const Review = ({ listingId }) => {
       <form onSubmit={handleReviewSubmit} className={styles.reviewForm}>
         <label>
           Rating:
-          <input
-            type="number"
-            value={rating}
-            onChange={(e) => setRating(e.target.value)}
-            min="1"
-            max="5"
-            required
-          />
+          <div className={styles.starRating}>
+            {[...Array(5)].map((_, index) => {
+              const starRating = index + 1;
+              return (
+                <FaStar
+                  key={index}
+                  size={24}
+                  color={starRating <= (hoverRating || rating) ? "#ffc107" : "#e4e5e9"}
+                  onClick={() => setRating(starRating)}
+                  onMouseEnter={() => setHoverRating(starRating)}
+                  onMouseLeave={() => setHoverRating(0)}
+                  style={{ cursor: 'pointer', marginRight: '5px' }}
+                />
+              );
+            })}
+          </div>
         </label>
         <label>
           Comment:
+          <div></div>
           <textarea
             value={comment}
             onChange={(e) => setComment(e.target.value)}
@@ -180,16 +194,13 @@ const Review = ({ listingId }) => {
         {reviews.map((review, index) => (
           <div key={index} className={styles.review}>
             {review.userId && <h3>{review.userId.name}: </h3>}
-            
-            <h4>Rating: {review.rating}</h4>
+            <h4>Rating: {'★'.repeat(review.rating) + '☆'.repeat(5 - review.rating)}</h4> 
             <p>Comment: {review.comment}</p>
-            {/* {review.userId && <p>Submitted by: {review.userId.name}</p>} */}
           </div>
         ))}
       </div>
     </div>
   );
 };
-
 
 export default Review;
