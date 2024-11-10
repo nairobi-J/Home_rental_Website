@@ -13,7 +13,8 @@ const AnimatedTextWord = ({ text }) => {
     }),
   };
 
-// Variants for each word.
+// Variants for each word.kkloll
+
 
   const child = {
     visible: {

@@ -4,18 +4,9 @@ import { Category } from '@mui/icons-material';
 import ListingCard2 from './ListingCard2';
 import Loader from './Loader';
 import { setListings } from "../redux/userSlice";
-import styles from './Listings.module.css';
-import { TbMountain } from 'react-icons/tb';
-import { GiForestCamp, GiCampfire } from 'react-icons/gi';
-import { FaSchool, FaHospital, FaRoad, FaCity, FaShop, FaChild, FaMosque, FaTree, FaPeace, FaLeaf } from 'react-icons/fa6';
-import { BiWorld } from 'react-icons/bi';
-import { IoDiamond } from 'react-icons/io5';
+
 import { useDispatch, useSelector } from 'react-redux';
 
-const iconMap = {
-  TbMountain, GiForestCamp, BiWorld,
-  GiCampfire, IoDiamond, FaSchool, FaHospital, FaRoad, FaCity, FaShop, FaChild, FaMosque, FaTree, FaLeaf
-};
 
 const Listings = () => {
   const dispatch = useDispatch();
@@ -51,7 +42,7 @@ const Listings = () => {
   return (
     <>
     
-     
+     <h1><u>My property List</u></h1>
       {loading ? <Loader /> :
         <div className="listings">
           {filteredListings.length > 0 ? (
