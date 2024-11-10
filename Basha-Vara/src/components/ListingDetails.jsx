@@ -114,13 +114,13 @@ const ListingDetails = () => {
         <div className={styles['list']}>
           
           <div>
-            <p>Here is the details:</p>
+            <h1><u>Here is the details:</u></h1>
           </div>
        
        <div className={styles['listing-details']}>
            
            <div className={styles['title']}>
-               <h1>Title:{listing.title}</h1>
+               <h2>Title:{listing.title}</h2>
            </div>
            <div className={styles['photos']}>
                <h1>Photos:</h1>
@@ -141,10 +141,12 @@ const ListingDetails = () => {
             <p></p>
            <hr />
            <div className={styles['creator']}>
-               {creator && creator.profileImagePath ? (
+               {creator && creator.profileImagePath  ? (
                    <>
                        <img src={`http://localhost:3000/${creator.profileImagePath.replace("public", "")}`} alt="creator" />
-                       <h3>Created by {creator.name}</h3>
+                       <h3>Created by {creator.name}, Contact:{creator.contact}</h3>
+                       
+                       
                    </>
                ) : (
                    <p>Creator information not available.</p>
@@ -154,8 +156,12 @@ const ListingDetails = () => {
            <h3>Description</h3>
            <p>{listing.description}</p>
            <hr />
-           <h3>{listing.highlight}</h3>
+           <h3>HighLights</h3>
+           <p>{listing.highlight}</p>
+           <hr />
+           <h3>Details</h3>
            <p>{listing.highlightDetails}</p>
+           <hr />
            <div className={styles['rent']}>
                <div>
                    <h2>What this place offers</h2>

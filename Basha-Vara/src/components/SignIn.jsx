@@ -55,9 +55,15 @@ const SignIn = () => {
     <>
      
       <div className={styles.login}>
+      
         <div className={styles.signInContainer}>
-          <form onSubmit={handleSubmit}>
+       
+          <div className={styles.formContainer}>
+            
+          <h2>Sign In</h2>
+          <form onSubmit={handleSubmit} >
             <div className={styles.formGroup}>
+          
               <label className={styles.label}>Email: </label>
               <input
                 className={styles.input}
@@ -79,13 +85,22 @@ const SignIn = () => {
                 required
               />
             </div>
-            
-              <button type='submit' className={styles.button}>Sign in</button>
+            <div className={styles.reg}>
+            <button type='submit' className={styles.button}>Sign in</button>
+            </div>
+             
           </form>
+          </div>
+          <div className={styles.reg}>
           <p>Not registered?
 
-          </p> <button onClick = {handleClick} className={styles.linkButton}>Register here</button>
-          <button onClick={() => navigate('/')} className={styles.button}>Back</button>
+</p> <button onClick = {handleClick} className={styles.linkButton}>Register</button>
+
+          </div>
+          <div className={styles.reg}><button onClick={() => navigate('/')} className={styles.button}>Back</button></div>
+          
+
+
         </div>
       </div>
     </>

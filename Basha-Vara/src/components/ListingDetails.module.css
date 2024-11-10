@@ -1,5 +1,11 @@
 .list{
     padding-top: 100px;
+    h2{
+      
+        box-shadow: #333 4px;
+        background-color: rgb(241, 210, 170);
+        display: flex;
+    }
 }
 
 .listingDetails {
@@ -19,6 +25,7 @@
    margin-left: 10px;
     
     border: 2px solid black;
+   
 
     
 }
@@ -109,7 +116,7 @@
 .button:hover {
     background-color: #45a049;
 }
-input {
+/* input {
     border: 1px solid grey;
     padding: 15px 10px;
     border-radius: 10px;
@@ -120,7 +127,7 @@ input {
     &:focus {
         outline: none;
     }
-}
+} */
 textarea {
     border: 1px solid grey;
     padding: 15px 10px;
