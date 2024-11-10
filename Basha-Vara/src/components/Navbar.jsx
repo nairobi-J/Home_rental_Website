@@ -1,6 +1,3 @@
-
-
-
 import React, { useState } from 'react';
 import Header from './Header';
 import { IconButton } from '@mui/material';
@@ -74,6 +71,7 @@ const Navbar = () => {
                   {/* <Link to="/wishList">Wish List</Link> */}
                   <Link to="/propertyList">Property List</Link>
                   <Link to="/about">About Us</Link>
+                  <Link to="/accountsetting">Account Setting</Link>
                  {/* <Link to = "/createList">create</Link> */}
                   <Link to="/signIn" onClick={() => dispatch(setLogOut())}>Log Out</Link>
                 </>

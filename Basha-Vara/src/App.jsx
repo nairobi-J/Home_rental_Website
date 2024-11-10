@@ -22,7 +22,7 @@ import PropertyList from './components/PropertyList';
 function AppContent(){
 
   const location = useLocation();
-  const hideNavbarPaths = ['/signUp', '/signIn', '/about', '/passwordReset'];
+  const hideNavbarPaths = ['/signUp', '/signIn', '/about', '/passwordReset', '/accountsetting'];
 
   return(
     <>
