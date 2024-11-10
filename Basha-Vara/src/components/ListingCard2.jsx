@@ -5,7 +5,7 @@ import { FaBangladeshiTakaSign } from 'react-icons/fa6';
 import { useNavigate } from 'react-router';
 import { useSelector } from 'react-redux';
 
-const ListingCard = ({
+const ListingCard2 = ({
   listingId,
   creator,
   listingPhotoPaths,
@@ -63,13 +63,13 @@ const ListingCard = ({
           <p>Type: {type}</p>
           <p>
            
-            
           </p>
-       
+         
+          
         </div>
       </div>
     </div>
   );
 };
 
-export default ListingCard;
+export default ListingCard2;

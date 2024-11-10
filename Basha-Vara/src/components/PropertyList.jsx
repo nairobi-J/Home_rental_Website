@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { categories } from '../data';
 import { Category } from '@mui/icons-material';
-import ListingCard from './ListingCard';
+import ListingCard2 from './ListingCard2';
 import Loader from './Loader';
 import { setListings } from "../redux/userSlice";
 import styles from './Listings.module.css';
@@ -56,7 +56,7 @@ const Listings = () => {
         <div className="listings">
           {filteredListings.length > 0 ? (
             filteredListings.map(({ _id, creator, listingPhotoPaths, city, district, thana, category, type, price }) => (
-              <ListingCard
+              <ListingCard2
                 key={_id}
                 listingId={_id}
                 creator={creator}
