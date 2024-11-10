@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import styles from './SignIn.module.css';
 import { setLogin } from '../redux/userSlice';
 import { useDispatch } from 'react-redux';
@@ -90,6 +90,11 @@ const SignIn = () => {
             </div>
              
           </form>
+          </div>
+          <div>
+            <p>
+              Forget Password? <Link to="/passwordReset">Reset it here</Link>.
+            </p>
           </div>
           <div className={styles.reg}>
           <p>Not registered?

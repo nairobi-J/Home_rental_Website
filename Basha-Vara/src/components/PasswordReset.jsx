@@ -9,7 +9,7 @@ const PasswordReset = () => {
     <Header />
     <div className={`${styles.passwordReset} container`}>
    
-      <Navbar/>
+    
       
      
         <h2>Reset Your Password</h2>
@@ -21,6 +21,9 @@ const PasswordReset = () => {
         </div>
         <div>
             <button className='passReset'>Save</button>
+        </div>
+        <div>
+          <button onClick={() => navigate('/')}>Back</button>
         </div>
     </div>
     </>
