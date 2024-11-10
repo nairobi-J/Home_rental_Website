@@ -153,5 +153,36 @@ router.get('/:listingId', async(req, res) => {
         res.status(500).json({ message: "Failed to fetch listing", error: err.message });
     }
 });
+// routes/listings.js
+
+
+
+
+
+// Fetch listings by creator
+router.get('/listings', async (req, res) => {
+  const { creatorId } = req.query; // Get creatorId from the query string
+
+  if (!creatorId || !mongoose.Types.ObjectId.isValid(creatorId)) {
+    return res.status(400).json({ message: 'Invalid or missing creatorId' });
+  }
+
+  try {
+    const listings = await Listing.find({ creator: creatorId }); // Fetch listings created by this user
+
+    if (listings.length === 0) {
+      return res.status(404).json({ message: 'No listings found for this creator' });
+    }
+
+    return res.status(200).json(listings); // Send the listings as the response
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({ message: 'Server error' });
+  }
+});
 
 export default router;
+
+  
+
+

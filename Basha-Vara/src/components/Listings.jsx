@@ -54,6 +54,7 @@ const Listings = () => {
     <>
      <div className={styles['listings']}>
       {
+        
         categories?.map((item, index) => {
            const IconComp = iconMap[item.icon];
            return(
@@ -71,6 +72,8 @@ const Listings = () => {
     {loading? <Loader/>: 
     
      <div className="listings">
+       
+      
         {listings.map((
          { _id, 
           creator,
@@ -90,6 +93,7 @@ const Listings = () => {
           type = {type}
           price = {price}
           />))}
+          
      </div>
     
     }

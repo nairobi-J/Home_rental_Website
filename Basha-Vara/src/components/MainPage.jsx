@@ -11,6 +11,8 @@ import { useSelector } from 'react-redux';
 
 const MainPage = () => {
   const user = useSelector((state) => state.user); // Fetch user from Redux
+  const listings = useSelector((state) => state.listings); // Make sure to get the listings from Redux
+    // Get logged-in user from Redux
   const navigate = useNavigate();
   const isLoggedIn = !!localStorage.getItem('token'); // Check if user is logged in
 
