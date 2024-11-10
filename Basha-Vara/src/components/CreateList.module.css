@@ -1,7 +1,16 @@
-@import "./breakpoints.module.css"; /* Ensure breakpoints are imported */
-@import "./variables.module.css"; /* Ensure variables are imported */
+.whole{
+    background-color: antiquewhite;
+    
+}
+h2{
+    background-color: antiquewhite;
+    color: rebeccapurple;
+    text-align: center;
+    padding: 20px;
+}
 
 .create-listing {
+    background-color: antiquewhite;
     display: flex;
     flex-direction: column;
     padding: 100px 100px 100px;
@@ -10,11 +19,14 @@
 
 
 .create-listing h1 {
-    color: var(--blue);
+
+    background-color: antiquewhite;
+    color: rebeccapurple;
 }
 
 .create-listing_step1 {
-    /* background-color: white; */
+    
+    background-color: antiquewhite;
     padding: 3px 4px;
     border-radius: 20px;
     margin-top: 4px;
@@ -22,19 +34,22 @@
 }
 
 .create-listing_step1 h2 {
-    color: var(--pinkred);
+    background-color: antiquewhite;
 }
 
 .create-listing_step1 hr {
+    
     margin: 15px 0 25px;
 }
 
 .create-listing_step1 h3 {
+    background-color: antiquewhite;
     margin: 4px 0 2px;
     color: var(--blue);
 }
 
 .category-list {
+    background-color: antiquewhite;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -44,6 +59,7 @@
 }
 
 .category {
+    
     display: flex;
     flex-direction: column;
 
@@ -51,7 +67,7 @@
     align-items: center;
     width: 100px;
     height: 90px;
-    border: 1px solid var(--grey);
+    border: 1px solid grey;
     border-radius: 10px;
     cursor: pointer;
     transition: 0.3s ease;
@@ -59,11 +75,18 @@
 }
 
 .category_icon {
+    background-color: white;
     font-size: 30px;
     color: rgb(102, 7, 7);
+    
+    &:hover {
+        color:rgb(120, 115, 115);
+    }
 }
 
+
 .category p {
+
     font-weight: 300;
     text-align: center;
     color: black;
@@ -71,7 +94,7 @@
 
 .category:hover {
     border: 2px solid rgb(72, 6, 6);
-    background-color: var(--lightgrey);
+    background-color: rgb(120, 115, 115);
 }
 
 .category.selected {
@@ -80,35 +103,45 @@
 }
 
 .type-list {
+    max-width: 60%;
+    background-color: antiquewhite;
     display: flex;
     flex-direction: column;
     gap: 4px;
+    justify-content: center;
+   
 }
 
 .type {
+    
     display: flex;
-                justify-content: space-between;
+                justify-content: left;
+
                 align-items: center;
-                max-width: 1000px;
-                max-height: 100px;
-                padding: 15px 3px;
+                
+                gap:20px;
                 border: 1px solid grey;
                 border-radius: 10px;
                 cursor: pointer;
                 transition: 0.3s ease;
+                padding-left: 8px;
+               
 }
 
 .type_text {
-    max-width: 600px;
-    max-height: 70px;
-    padding: 15px 30px;
+    
+   
+   display: flex;
+   flex-direction: row;
+   padding: auto;
+  
     
 }
 
 .type_icon {
-    font-size: 50px;
-    max-width: 50px;
-    max-height: 50px;
+    font-size: 30px;
+    max-width: 30px;
+    max-height: 30px;
 }
 
 .type p {
@@ -116,21 +149,24 @@
 }
 
 .type:hover {
-    border: 2px solid red;
-    /* background-color: var(--lightgrey); */
+   
+    background-color: var(--lightgrey);
 }
 
 .type.selected {
-    border: 8px solid #66f137;
-    /* background-color: rgb(102, 241, 55); */
+   
+    border: 3px solid rgb(255, 8, 8)
 }
 
+
   .full {
+    background-color: antiquewhite;
         max-width: 1000px;
         padding: 0px 3px;
     }
 
     .half {
+        background-color: antiquewhite;
         max-width: 100%;
 
         display: flex;
@@ -142,6 +178,7 @@
     }
 
     .location {
+        background-color: antiquewhite;
         p {
             font-weight: 700;
             margin: 20px 0 10px;
@@ -161,40 +198,45 @@
         }
     }
     .basics {
+        background-color: antiquewhite;
        
         display: flex;
-        flex-direction: row;
-        gap:10px
+        flex-direction: column;
+        width: 17%;
+        
+        font-size: large;
+        gap:10px;
    
     }
     .basics .basic{
+        padding: 15px;
         display: flex;
         flex-direction: row;
-        gap: 10px;
+        align-items: center;
+        justify-content: center;
+        gap: 4px;
         border: 2px solid grey;
         border-radius: 15px;
-        height: 60px;
-        align-items: center;
+    
+        
     }
-     .basics  .basic_count {
-            
-            display: flex;
-            flex-direction: row;
-            height: 40px;
-           
-     }
+ 
      .basics   .basic p {
-                font-weight: 50;
+              font-size: 20px;
+              
             }
 
             .basics .basic .basic_count {
                 display: flex;
-                align-items: center;
                 
+                align-items: center;
+                justify-content: center;
+                background-color: transparent;
                 gap: 10px;
-                font-size: 20px;
+                font-size: 13px;
             }
             .create-listing_step2 {
+                background-color: antiquewhite;
                 /* background-color: white; */
                 padding: 3px 4px;
                 border-radius: 20px;
@@ -203,7 +245,9 @@
             }
             
             .create-listing_step2 h2 {
-                color: var(--pinkred);
+                background-color: antiquewhite;
+                color: rebeccapurple;
+                
             }
             
             .create-listing_step2 hr {
@@ -211,11 +255,13 @@
             }
             
             .create-listing_step2 h3 {
+                background-color: antiquewhite;
                 margin: 40px 0 20px;
                 color: var(--blue);
             }
         
       .amenity-list {
+        background-color: antiquewhite;
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -225,6 +271,7 @@
             }
             
             .amenity-list .amenity {
+                
                 display: flex;
                 flex-direction: column;
             
@@ -326,6 +373,34 @@
       
             padding: 40px 30px;
         
+    }
+    .description{
+        background-color: antiquewhite;
+        input {
+            border: 1px solid grey;
+            padding: 15px 10px;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            width: 500px;
+
+            &:focus {
+                outline: none;
+            }
+        }
+        textarea {
+            border: 1px solid grey;
+            padding: 15px 10px;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            width: 500px;
+
+            &:focus {
+                outline: none;
+            }
+        }
+
     }
 
 @media (max-width: 100px) {

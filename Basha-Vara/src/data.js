@@ -92,19 +92,19 @@ export const categories = [
 export const types = [
   {
     name: "An entire apartment",
-    description: "whole place",
+    description: "(whole place)",
     icon: "FaHouseUser",
   },
   {
-    name: "Room(s)",
+    name: "Multiple Rooms",
     description:
-      "own room in a house, plus access to shared places",
+      "(own room in a house ,plus access to shared places)",
     icon: "BsFillDoorOpenFill",
   },
   {
     name: "A Shared Room",
     description:
-      "sleep in a room or common area that maybe shared with you or others",
+      " (sleep in a room or common area that maybe shared with you or others)",
     icon: "FaPeopleRoof",
   },
   //arekta add krte hbe pura ghor vara
@@ -116,14 +116,7 @@ export const facilities = [
     name: "Bath tub",
     icon: "PiBathtubFill",
   },
-  {
-    name: "Personal care products",
-    icon: "FaPumpSoap",
-  },
-  {
-    name: "Outdoor shower",
-    icon: "FaShower",
-  },
+  
   {
     name: "Washer",
     icon: "BiSolidWasher",
@@ -134,7 +127,7 @@ export const facilities = [
   },
   {
     name: "Hangers",
-    icon: "PiCoatHangerFill ",
+    icon: "GiHanger",
   },
   {
     name: "Iron",
@@ -144,10 +137,7 @@ export const facilities = [
     name: "TV",
     icon: "PiTelevisionFill",
   },
-  {
-    name: "Dedicated workspace",
-    icon: "BsPersonWorkspace",
-  },
+
   {
     name: "Air Conditioning",
     icon: "BsSnow",
@@ -196,10 +186,7 @@ export const facilities = [
     name: "Outdoor dining area",
     icon: "FaUmbrellaBeach",
   },
-  {
-    name: "Private patio or Balcony",
-    icon: "MdBalcony",
-  },
+
   {
     name: "Camp fire",
     icon: "GiCampfire",
@@ -212,10 +199,7 @@ export const facilities = [
     name: "Free parking",
     icon: "AiFillCar",
   },
-  {
-    name: "Self check-in",
-    icon: "FaKey",
-  },
+
   {
     name: "Pet allowed",
     icon: "MdPets",

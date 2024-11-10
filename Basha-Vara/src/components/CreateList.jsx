@@ -11,10 +11,11 @@ import { RemoveCircleOutline, AddCircleOutline,Person,Bed, Bathroom,Balcony} fro
 import { TbBeach, TbMountain, TbPool } from 'react-icons/tb';
 import {
   GiBarn, GiBoatFishing, GiCactus, GiCastle, GiCaveEntrance, GiForestCamp,
-  GiIsland, GiWindmill, GiHeatHaze, GiCctvCamera, GiBarbecue, GiToaster, GiCampfire
+  GiIsland, GiWindmill, GiHeatHaze, GiCctvCamera, GiBarbecue, GiToaster, GiCampfire,
+  GiHanger
 } from 'react-icons/gi';
-import { FaSkiing, FaPumpSoap, FaShower, FaFireExtinguisher, FaUmbrellaBeach, FaKey } from 'react-icons/fa';
-import { FaHouseUser, FaPeopleRoof, FaKitchenSet,FaBangladeshiTakaSign } from 'react-icons/fa6';
+import { FaSkiing, FaPumpSoap, FaShower, FaFireExtinguisher, FaUmbrellaBeach, FaKey, FaHospital, FaSchool, FaLeaf, FaRoad, FaCity, FaChild, FaMosque, FaTree } from 'react-icons/fa';
+import { FaHouseUser, FaPeopleRoof, FaKitchenSet,FaBangladeshiTakaSign, FaShop } from 'react-icons/fa6';
 import { BiSolidWasher, BiSolidDryer, BiSolidFirstAid, BiWifi, BiSolidFridge, BiWorld, BiTrash} from 'react-icons/bi';
 import { BsSnow, BsFillDoorOpenFill, BsPersonWorkspace } from 'react-icons/bs';
 import { IoDiamond } from 'react-icons/io5';
@@ -31,7 +32,7 @@ const iconMap = {
   FaKitchenSet, BiSolidWasher, BiSolidDryer, BiSolidFirstAid, BiWifi, BiSolidFridge,
   BiWorld, BsSnow, BsFillDoorOpenFill, BsPersonWorkspace, MdOutlineVilla, MdMicrowave,
   MdBalcony, MdYard, MdPets, PiBathtubFill, PiCoatHangerFill, PiTelevisionFill, TbIroning3,
-  GiHeatHaze, GiCctvCamera, GiBarbecue, GiToaster, GiCampfire, AiFillCar, IoDiamond
+  GiHeatHaze, GiCctvCamera, GiBarbecue, GiToaster, GiCampfire, AiFillCar, IoDiamond,FaHospital,FaSchool,FaLeaf,FaRoad,FaCity,FaShop,FaChild,FaMosque, FaTree,GiHanger
 };
 
 const CreateList = () => {
@@ -149,7 +150,7 @@ const CreateList = () => {
 //  console.log(amenity);
 //  console.log(formDescription)
   return (
-    <>
+    <div className={`${styles['whole']} `}>
       <Navbar />
       
       <div className={`${styles['create-listing']} container`}>
@@ -197,7 +198,9 @@ const CreateList = () => {
                     </div>
 
                     <div className={`${styles['type_text']} container`}>
-                      <p>{item.name}</p>
+                    <p>-</p>
+                      <p>{item.name} </p>
+                      <p>.</p>
                       <p>{item.description} </p>
                     </div>
 
@@ -283,75 +286,84 @@ const CreateList = () => {
             <div className={`${styles['basics']} container`}>
 
               <div className={`${styles['basic']} container`}>
-                <p>Number:</p>
-                <Person />
+                <div>People:</div>
+                <Person 
+                sx={{ fontSize: "20px", cursor: "pointer", background:"transparent"  }}
+                />
 
                 <div className={`${styles['basic_count']} container`}>
                   <RemoveCircleOutline 
                   onClick = {()=>{personCount > 1 && setPersonCount(personCount - 1)}}
-                  sx={{ fontSize: "25px", cursor: "pointer" }} />
-                  <p>{personCount}</p>
+                  sx={{ fontSize: "20px", cursor: "pointer", background:"transparent" }} />
+                  <div>{personCount}</div>
                   <AddCircleOutline 
                   onClick = {() => {
                     setPersonCount(personCount + 1)
                   }}
-                  sx={{ fontSize: "25px", cursor: "pointer" }} />
+                  sx={{ fontSize: "20px", cursor: "pointer", background :"transparent"}} />
                 </div>
 
               </div>
 
               <div className={`${styles['basic']} container`}>
-                <p>Bedrooms:</p>
-                <Bed />
+                <div>Bedrooms:</div>
+                <Bed
+                 sx={{ fontSize: "20px", cursor: "pointer", background:"transparent"  }}
+                 />
 
                 <div className={`${styles['basic_count']} container`}>
                   <RemoveCircleOutline 
                   onClick = {()=>{bedroomCount > 1 && setBedroomCount(bedroomCount - 1)}}
-                  sx={{ fontSize: "25px", cursor: "pointer" }} />
-                  <p>{bedroomCount}</p>
+                  sx={{ fontSize: "20px", cursor: "pointer", background:"transparent"  }} />
+                  <div>{bedroomCount}</div>
                   <AddCircleOutline 
                   onClick = {()=>{setBedroomCount(bedroomCount + 1)}}
-                  sx={{ fontSize: "25px", cursor: "pointer" }} />
+                  sx={{ fontSize: "20px", cursor: "pointer", background:"transparent"  }} />
                 </div>
 
               </div>
 
 
               <div className={`${styles['basic']} container`}>
-                <p>Bathrooms:</p>
-                <Bathroom />
+                <div>
+                Bathrooms:
+                </div>
+               
+                <Bathroom
+                sx={{ fontSize: "20px", cursor: "pointer", background:"transparent"  }} />
                 <div className={`${styles['basic_count']} container`}>
                   <RemoveCircleOutline 
                   onClick = {()=>{bathroomCount > 1 && setBathroomCount(bathroomCount - 1)}}
-                  sx={{ fontSize: "25px", cursor: "pointer" }} />
-                  <p>{bathroomCount}</p>
+                  sx={{ fontSize: "20px", cursor: "pointer", background:"transparent"  }} />
+                  <div>{bathroomCount}</div>
 
                   <AddCircleOutline 
                   onClick = {()=>{setBathroomCount(bathroomCount + 1)}}
-                  sx={{ fontSize: "25px", cursor: "pointer" }} />
+                  sx={{ fontSize: "20px", cursor: "pointer", background:"transparent"  }} />
                 </div>
               </div>
 
 
               <div className={`${styles['basic']} container`}>
-                <p>Balcony:</p>
-                <Balcony />
+                <div>Balcony:</div>
+                <Balcony 
+                sx={{ fontSize: "20px", cursor: "pointer", background:"transparent"  }}/>
 
                 <div className={`${styles['basic_count']} container`}>
                   <RemoveCircleOutline 
                   onClick = {()=>{balconyCount > 0 && setBalconyCount(balconyCount - 1)}}
-                  sx={{ fontSize: "25px", cursor: "pointer" }} />
-                  <p>{balconyCount}</p>
+                  sx={{ fontSize: "20px", cursor: "pointer", background:"transparent"  }} />
+                  <div>{balconyCount}</div>
                   <AddCircleOutline
                   onClick = {()=>{setBalconyCount(balconyCount + 1)}}
-                   sx={{ fontSize: "25px", cursor: "pointer" }} />
+                  sx={{ fontSize: "20px", cursor: "pointer", background:"transparent"  }} />
                 </div>
 
               </div>
             </div>
           </div>
           <div className={`${styles['create-listing_step2']} container`}>
-            <h2>Step 2: What Kind of facilities you have?</h2>
+            <h2>What Kind of facilities you have?</h2>
             <hr />
             <h3>Tell people What your Place offers ? Select Multiple</h3>
             <div className={`${styles['amenity-list']} container`}>
@@ -449,7 +461,7 @@ const CreateList = () => {
               onChange = {handleChangeDescription}
               required />
               <p>Price</p>
-              <FaBangladeshiTakaSign/>
+             
              
               <input type = "number"  
               placeholder = "4000" 
@@ -460,13 +472,15 @@ const CreateList = () => {
               required
               
               />
+               <FaBangladeshiTakaSign 
+               />
                </div>
           </div>
           <button className='submit' type = "submit">Create Your List</button>
         </form>
       </div>
 
-    </>
+    </div>
   );
 };
 
