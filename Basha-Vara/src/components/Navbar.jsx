@@ -36,12 +36,11 @@ const Navbar = () => {
             value={search}
             onChange={(e) => setSearch(e.target.value)}
            />
-            <IconButton disabled = {search === ""}
+           <IconButton disable = {search === ""}>
+            <Search
             onClick = {() => {
               navigate(`/listings/search/${search}`)
-            }} >
-            <Search
-           
+            }}
             />
            </IconButton>
         </div>

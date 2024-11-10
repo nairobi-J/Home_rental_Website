@@ -17,11 +17,9 @@ const ListingCard = ({
   price
 }) => {
   const navigate = useNavigate();
-  // const handleClick = () => {
-  //   window.location.href = `/listings/${listingId}`;
-  // };
-
-   const handleClick = () => navigate(`/listings/${listingId}`);
+  const handleClick = () => {
+    window.location.href = `/listings/${listingId}`;
+  };
   const handleClick1 = () => {
     navigate('/signin')
   };
@@ -70,16 +68,10 @@ const ListingCard = ({
             </span>{' '}
             /mo
           </p>
-          {/* {user?(
+          {user?(
           <button onClick={handleClick}>See details</button>
           ):(<button onClick={handleClick1}>Log In To see details</button>)
-          } */}
-
-          {isLoggedIn ? (
-             <button onClick={handleClick}>See details</button>
-             ) : (
-             <button onClick={handleClick1}>Log In To see details</button>
-             )}
+          }
           
         </div>
       </div>
