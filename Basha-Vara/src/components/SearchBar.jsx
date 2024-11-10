@@ -1,72 +1,74 @@
-import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
-import { setListings } from '../redux/userSlice';
-import Loader from './Loader';
-import Navbar from './Navbar';
-import ListingCard from './ListingCard';
-// import Footer from './Footer';  // Ensure Footer is imported
+import React, { useEffect } from 'react'
+import { useParams } from 'react-router-dom'
+import { useSelector, useDispatch } from 'react-redux'
+import { setListings } from '../redux/userSlice'
+import { useState } from 'react'
+import Loader from './Loader'
+import Navbar from './Navbar'
+import ListingCard from './ListingCard'
 
 const SearchBar = () => {
     const [loading, setLoading] = useState(true);
-    const { search } = useParams();
+    const {search} = useParams();
 
     const listings = useSelector((state) => state.listings);
-    const listingsArray = Array.isArray(listings) ? listings : [];
     const dispatch = useDispatch();
 
     const getSearchListings = async () => {
-        try {
-            const response = await fetch(`http://localhost:3000/listings/search/${search}`, {
-                method: "GET"
-            });
-
-            if (!response.ok) {
-                throw new Error(`HTTP error! Status: ${response.status}`);
-            }
+        try{
+            const response = await fetch(`http://localhost:5173/listings/search/${search}`, {
+                methos: "GET"
+            })
 
             const data = await response.json();
-            dispatch(setListings(data));  // Corrected to dispatch with listings directly
+            dispatch(setListings({listings: data}))
             setLoading(false);
-        } catch (err) {
-            console.log("Fetch search listings failed:", err.message);
-            setLoading(false);
+
+        } catch(err) {
+            console.log("fetch search list failed!", err.message)
         }
-    };
+    }
 
     useEffect(() => {
-        getSearchListings();
-    }, [search]);
+        getSearchListings()
+    }, [search])
+        
+  return loading? <Loader/> : (
+   <>
+      <Navbar />
+      <h1 className="title-list">Search</h1>
+      <div className="list">
+        {wishList?.map(
+          ({
+            _id,
+            creator,
+            listingPhotoPaths,
+            city,
+            province,
+            country,
+            category,
+            type,
+            price,
+            booking = false,
+          }) => (
+            <ListingCard
+              listingId={_id}
+              creator={creator}
+              listingPhotoPaths={listingPhotoPaths}
+              city={city}
+              province={province}
+              country={country}
+              category={category}
+              type={type}
+              price={price}
+              booking={booking}
+            />
+          )
+        )}
+      </div>
+      <Footer />
+    </>
+  )
+}
 
-    return loading ? (
-        <Loader />
-    ) : (
-        <>
-            <Navbar />
-            <h1 className="title-list">Search Results</h1>
-            <div className="list">
-                {listingsArray.length > 0 ? (
-                    listingsArray.map((listing) => (
-                        <ListingCard
-                            key={listing._id}  // Add a unique key for each item
-                            listingId={listing._id}
-                            creator={listing.creator}
-                            listingPhotoPaths={listing.listingPhotoPaths}
-                            city={listing.city}
-                            district={listing.district}
-                            thana={listing.thana}
-                            category={listing.category}
-                            type={listing.type}
-                            price={listing.price}
-                        />
-                    ))
-                ) : (
-                    <p>No listings found for "{search}"</p>
-                )}
-            </div>
-           
-        </>
-    );
-};
-
-export default SearchBar;
+export default SearchBar
