@@ -20,12 +20,13 @@ const iconMap = {
  
  GiCampfire,  IoDiamond, FaSchool, FaHospital, FaRoad, FaCity, FaShop, FaChild, FaMosque, FaTree, FaLeaf
 };
-const Listings = () => {
+const Listings = ({ listings }) => {
+    const listingsArray = Array.isArray(listings) ? listings : [];
 
-    const dispatch = useDispatch()
-    const [loading, setLoading] = useState(true)
-    const [selectedCategory, setSelectedCategory] = useState("")
-    const listings = useSelector( (state) => state.listings)
+   const dispatch = useDispatch();
+  const [loading, setLoading] = useState(true);
+  const [selectedCategory, setSelectedCategory] = useState("");
+  const allListings = useSelector((state) => state.listings);
       const getFeedListings = async () => {
           try{
           
@@ -71,7 +72,7 @@ const Listings = () => {
     {loading? <Loader/>: 
     
      <div className="listings">
-        {listings.map((
+        {/* {listings.map((
          { _id, 
           creator,
           listingPhotoPaths,
@@ -89,7 +90,22 @@ const Listings = () => {
           category = {category}
           type = {type}
           price = {price}
-          />))}
+          />))} */}
+
+          {allListings.map(({ _id, creator, listingPhotoPaths, city, district, thana, category, type, price }) => (
+            <ListingCard
+              key={_id}
+              listingId={_id}
+              creator={creator}
+              listingPhotoPaths={listingPhotoPaths}
+              city={city}
+              district={district}
+              thana={thana}
+              category={category}
+              type={type}
+              price={price}
+            />
+          ))}
      </div>
     
     }

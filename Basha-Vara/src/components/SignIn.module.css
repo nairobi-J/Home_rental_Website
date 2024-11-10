@@ -81,3 +81,17 @@
 .linkButton:hover {
     color: #3a2424;
 }
+
+@media (max-width: 600px) {
+    .container {
+        margin-top: 80px;
+        /* Adjust margin for smaller screens */
+    }
+
+    .signIn {
+        width: 90%;
+        /* Full width on small screens */
+        padding: 20px;
+        /* Less padding for smaller screens */
+    }
+}
