@@ -15,6 +15,7 @@ Features
 10. Material UI (MUI): Provides a modern and sleek design with pre-built components.
 
 Technologies Used
+
 Frontend
 React.js: For building the interactive UI.
 Redux: For state management across the application.
@@ -29,25 +30,28 @@ Express.js: A minimal web framework for handling API requests.
 Nodemon: For automatic restart of the server.
 MongoDB: NoSQL database for storing listings, users, reviews, rents.
 Mongoose: MongoDB ORM for interacting with the database.
-Bcryptjs: For hashing user passwords securely.
+Bcrypt: For hashing user passwords securely.
 JWT: For secure user authentication and token generation.
 
 Setup & Installation
+
 Frontend Setup
-Clone the repository:
-git clone https://github.com/nairobi-J/Home_rental_Website.git
-1. Navigate to the frontend directory:
-cd Home_rental_Website/Basha-Vara
-2. Install the dependencies
-npm install
-3. Start the development server
-npm run dev
-4. Navigate to the backend directory
-cd Home_rental_Website/server
-5. Install the dependencies:
-npm install
-6. npm start
-The server will be available at http://localhost:3000.
+1. Clone the repository:
+     git clone https://github.com/nairobi-J/Home_rental_Website.git
+2. Navigate to the frontend directory:
+     cd Home_rental_Website/Basha-Vara
+3. Install the dependencies
+     npm install
+4. Start the development server
+     npm run dev
+5. Navigate to the backend directory
+     cd Home_rental_Website/server
+6. Install the dependencies:
+     npm install
+7. npm start
+     The server will be available at http://localhost:3000.
+
+
 
 
 
