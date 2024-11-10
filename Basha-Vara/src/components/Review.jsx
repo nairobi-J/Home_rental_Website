@@ -180,6 +180,7 @@ const Review = ({ listingId }) => {
         {reviews.map((review, index) => (
           <div key={index} className={styles.review}>
             {review.userId && <h3>{review.userId.name}: </h3>}
+            
             <h4>Rating: {review.rating}</h4>
             <p>Comment: {review.comment}</p>
             {/* {review.userId && <p>Submitted by: {review.userId.name}</p>} */}

@@ -6,7 +6,35 @@ import Review from './Review';
 import FileUpload from './FileUpload';
 import styles from './ListingDetails.module.css';
 import Navbar from './Navbar';
-
+import { Balcony, Bathroom, Bed, Person } from '@mui/icons-material';
+import { categories, types, facilities } from '../data';
+import {DragDropContext, Draggable,Droppable} from 'react-beautiful-dnd'
+import { RemoveCircleOutline, AddCircleOutline} from '@mui/icons-material';
+import { TbBeach, TbMountain, TbPool } from 'react-icons/tb';
+import {
+  GiBarn, GiBoatFishing, GiCactus, GiCastle, GiCaveEntrance, GiForestCamp,
+  GiIsland, GiWindmill, GiHeatHaze, GiCctvCamera, GiBarbecue, GiToaster, GiCampfire,
+  GiHanger
+} from 'react-icons/gi';
+import { FaSkiing, FaPumpSoap, FaShower, FaFireExtinguisher, FaUmbrellaBeach, FaKey, FaHospital, FaSchool, FaLeaf, FaRoad, FaCity, FaChild, FaMosque, FaTree } from 'react-icons/fa';
+import { FaHouseUser, FaPeopleRoof, FaKitchenSet,FaBangladeshiTakaSign, FaShop } from 'react-icons/fa6';
+import { BiSolidWasher, BiSolidDryer, BiSolidFirstAid, BiWifi, BiSolidFridge, BiWorld, BiTrash} from 'react-icons/bi';
+import { BsSnow, BsFillDoorOpenFill, BsPersonWorkspace } from 'react-icons/bs';
+import { IoDiamond } from 'react-icons/io5';
+import { MdOutlineVilla, MdMicrowave, MdBalcony, MdYard, MdPets } from 'react-icons/md';
+import { PiBathtubFill, PiCoatHangerFill, PiTelevisionFill } from 'react-icons/pi';
+import { TbIroning3 } from 'react-icons/tb';
+import { AiFillCar } from 'react-icons/ai';
+import {IoIosImages} from 'react-icons/io';
+const iconMap = {
+    TbBeach, TbMountain, TbPool, GiBarn, GiBoatFishing, GiCactus, GiCastle,
+    GiCaveEntrance, GiForestCamp, GiIsland, GiWindmill, FaSkiing, FaPumpSoap,
+    FaShower, FaFireExtinguisher, FaUmbrellaBeach, FaKey, FaHouseUser, FaPeopleRoof,
+    FaKitchenSet, BiSolidWasher, BiSolidDryer, BiSolidFirstAid, BiWifi, BiSolidFridge,
+    BiWorld, BsSnow, BsFillDoorOpenFill, BsPersonWorkspace, MdOutlineVilla, MdMicrowave,
+    MdBalcony, MdYard, MdPets, PiBathtubFill, PiCoatHangerFill, PiTelevisionFill, TbIroning3,
+    GiHeatHaze, GiCctvCamera, GiBarbecue, GiToaster, GiCampfire, AiFillCar, IoDiamond,FaHospital,FaSchool,FaLeaf,FaRoad,FaCity,FaShop,FaChild,FaMosque, FaTree,GiHanger
+  };
 const ListingDetails = () => {
     const [loading, setLoading] = useState(true);
     const [listing, setListing] = useState(null);
@@ -101,10 +129,15 @@ const ListingDetails = () => {
                ))}
            </div>
            <h2>{listing.type} in {listing.thana}, {listing.district}, {listing.city}</h2>
-           <p>Person(preferred): {listing.personCount} </p>
-            <p> Bedroom: {listing.bedroomCount}</p>
-            <p>Bathroom: {listing.bathroomCount}</p>
-            <p>Balcony: {listing.balconyCount} </p>
+           <div className={styles['basic']}>
+
+           <div className={styles['basics']}><Person/> 
+           {listing.personCount} </div>
+            <div className={styles['basics']}> <Bed/> {listing.bedroomCount}</div>
+            <div className={styles['basics']}><Bathroom/>{listing.bathroomCount}</div>
+            <div className={styles['basics']}><Balcony/> {listing.balconyCount} </div>
+           </div>
+           
             <p></p>
            <hr />
            <div className={styles['creator']}>
@@ -145,12 +178,12 @@ const ListingDetails = () => {
                    </label>
                    <p>Price: {listing.price} x {multiplier} = {listing.price * multiplier}</p>
                </div>
-               <h3>add your national id</h3>
+               {/* <h3>add your national id</h3>
                <FileUpload onUploadSuccess={handleUploadSuccess} />
                <button className={styles['button']} type="submit" onClick={handleSubmit}>
                    Rent
-               </button>
-               <p>When you click on the rent your apartment will be confirmed</p>
+               </button> */}
+               {/* <p>When you click on the rent your apartment will be confirmed</p> */}
            </div>
            <hr />
           

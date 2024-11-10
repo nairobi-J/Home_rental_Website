@@ -12,17 +12,37 @@
 }
 
 .photos img {
-
-    max-width: 20%;
-    height: 50%;
+  gap:2px;
+  width: 300px;
+  height: 300px;
     margin-bottom: 10px;
-  
-    padding: 4px 4px 4px 4px;
-}
+   margin-left: 10px;
+    
+    border: 2px solid black;
 
+    
+}
+.basic{
+    display: flex;
+    gap:10px;
+    align-items: center;
+   
+
+}
+.basics{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color:rgb(246, 246, 246);
+    padding: 4px 20px 4px 20px;
+    border: 3px solid rgb(165, 50, 50);
+    border-radius: 10%;
+}
 .creator {
     display: flex;
     align-items: center;
+    flex-direction: column;
 }
 
 .creator img {
@@ -37,13 +57,23 @@
 }
 
 .amenities {
+
     display: flex;
     flex-wrap: wrap;
+    gap:20px;
+   
 }
 
 .amenity {
-    width: 30%;
-    margin-bottom: 10px;
+   
+
+
+ border:2px solid rgb(192, 74, 74);
+ padding-right: 35px;
+ background-color: white;
+ border-radius: 5%;
+    
+   
 }
 
 .facilityIcon {
@@ -62,8 +92,44 @@
     border: none;
     padding: 10px 20px;
     cursor: pointer;
+    input {
+        border: 1px solid grey;
+        padding: 15px 10px;
+        border-radius: 10px;
+        font-size: 16px;
+        font-weight: 600;
+        width: 500px;
+    
+        &:focus {
+            outline: none;
+        }
+    }
 }
 
 .button:hover {
     background-color: #45a049;
+}
+input {
+    border: 1px solid grey;
+    padding: 15px 10px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    width: 500px;
+
+    &:focus {
+        outline: none;
+    }
+}
+textarea {
+    border: 1px solid grey;
+    padding: 15px 10px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    width: 500px;
+
+    &:focus {
+        outline: none;
+    }
 }

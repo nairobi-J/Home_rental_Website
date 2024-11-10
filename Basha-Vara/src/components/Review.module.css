@@ -29,10 +29,16 @@
 
 .reviewList {
     margin-top: 20px;
+
 }
 
 .review {
     border: 1px solid #ccc;
     padding: 10px;
     margin-bottom: 10px;
+}
+button{
+    width: 80px;
+    justify-content: center;
+
 }
