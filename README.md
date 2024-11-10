@@ -13,6 +13,7 @@ Features
 8. Responsive Design: Optimized for both desktop and mobile devices.
 9. State Management: Utilizes Redux for global state management.
 10. Material UI (MUI): Provides a modern and sleek design with pre-built components.
+
 Technologies Used
 Frontend
 React.js: For building the interactive UI.
@@ -21,6 +22,7 @@ Material-UI (MUI): For pre-designed components and themes.
 CSS Modules: Scoped CSS for better styling.
 React Router: For handling navigation between different pages.
 Vite: A fast build tool for modern web applications.
+
 Backend
 Node.js: A JavaScript runtime for building the server-side application.
 Express.js: A minimal web framework for handling API requests.
@@ -29,6 +31,7 @@ MongoDB: NoSQL database for storing listings, users, reviews, rents.
 Mongoose: MongoDB ORM for interacting with the database.
 Bcryptjs: For hashing user passwords securely.
 JWT: For secure user authentication and token generation.
+
 Setup & Installation
 Frontend Setup
 Clone the repository:
